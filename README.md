@@ -4,7 +4,10 @@ Repositório para o projeto final do laboratório de microcontroladores e aplica
 == INTEGRANTES ==
 
 Caio Cesar Almeida Pegoraro RA:489000
+
 Silvio Custódio da Silva Júnior RA:595217
+
+Ivan luiz de Oliveira Perazzoli RA:400521
 
 
 == PROPOSTA ==
