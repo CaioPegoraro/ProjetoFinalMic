@@ -1,0 +1,11 @@
+== Emissor primario
+
+- adicionado ligações do emissor primário
+
+== Receptor primário 
+
+- adicionado ligações do receptor primário
+
+== Receptor secundário
+
+- 
