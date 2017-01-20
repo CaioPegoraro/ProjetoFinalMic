@@ -1,11 +1,14 @@
 == Emissor primario
+https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/emissor_primario.png
 
 - adicionado ligações do emissor primário
 
 == Receptor primário 
+https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/receptor_primario.PNG
 
 - adicionado ligações do receptor primário
 
 == Receptor secundário
+https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/receptor_secundario.PNG
 
 - 
