@@ -17,3 +17,6 @@ O controle será feito por um terminal (PC) utilizando um hardware de comunicaç
 Havera um receptor no veículo para troca de mensagens e dados.
 O "rover" terá sensores de leitura ambiente (luminosidade, ultrasom, etc), os dados serão enviados para a central e exibidos em uma tela de comando, pelos quais será possível controlar a movimentação e outras ações.
 Adicionalmente espera-se equipar o veículo com uma camera capaz de enviar fotos remotamente.
+
+
+![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/arquitetura_comunicacao.PNG)
