@@ -18,5 +18,12 @@ Havera um receptor no veículo para troca de mensagens e dados.
 O "rover" terá sensores de leitura ambiente (luminosidade, ultrasom, etc), os dados serão enviados para a central e exibidos em uma tela de comando, pelos quais será possível controlar a movimentação e outras ações.
 Adicionalmente espera-se equipar o veículo com uma camera capaz de enviar fotos remotamente.
 
+== LISTA DE TAREFAS ==
+- Montar o projeto do painel de controle;
+- Testar os sensores de temperatura e de distância utilizando um arduíno externo;
+- Escrever o documento do trabalho;
 
+
+ == INTRODUÇÃO == 
 ![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/arquitetura_comunicacao.PNG)
+
