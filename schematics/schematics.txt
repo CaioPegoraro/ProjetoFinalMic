@@ -1,14 +1,17 @@
 == Emissor primario
 https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/emissor_primario.png
 
-- adicionado liga��es do emissor prim�rio
+(20/01/2017)
+- Adicionado ligações do emissor primário
 
-== Receptor prim�rio 
+== Receptor primário 
 https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/receptor_primario.PNG
 
-- adicionado liga��es do receptor prim�rio
+(20/01/2017)
+- Adicionado ligações do receptor primário
 
-== Receptor secund�rio
+== Receptor secundário
 https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/receptor_secundario.PNG
 
-- 
+Tarefas:
+- Adicionar esquemático inicial do receptor secundário c/ a ligação do display LCD e a ligação da comunicação serial
