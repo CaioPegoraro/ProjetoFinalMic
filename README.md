@@ -18,11 +18,16 @@ Havera um receptor no veículo para troca de mensagens e dados.
 O "rover" terá sensores de leitura ambiente (luminosidade, ultrasom, etc), os dados serão enviados para a central e exibidos em uma tela de comando, pelos quais será possível controlar a movimentação e outras ações.
 Adicionalmente espera-se equipar o veículo com uma camera capaz de enviar fotos remotamente.
 
-== LISTA DE TAREFAS ==
+== LISTA DE TAREFAS -> Semana do dia 30/01 ==
 - Montar o projeto do painel de controle;
-- Testar os sensores de temperatura e de distância utilizando um arduíno externo;
+- Sensor de temperatura funcionou corretamente;
+- Sensor de distância ultrasom funcionou mas não fez a leitura corretamente;
 - Escrever o documento do trabalho;
-
+   * Descrever os instrumentos utilizados (Arduinos, chave (liga/desl), motores DC (rodinhas), Motor dos braços, ponte H;
+   * Descrever os componentes utilizando uma imagem do Rover;
+   * Objetivo;
+   * Funcionamento;
+  
 
  == INTRODUÇÃO == 
 ![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/arquitetura_comunicacao.PNG)
