@@ -27,7 +27,7 @@ Adicionalmente espera-se equipar o veículo com uma camera capaz de enviar fotos
    * Descrever os componentes utilizando uma imagem do Rover;
    * Objetivo;
    * Funcionamento;
-  
+   * Testar novamente o sensor ultrasom;
 
  == INTRODUÇÃO == 
 ![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/arquitetura_comunicacao.PNG)
