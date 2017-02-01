@@ -31,5 +31,22 @@ Adicionalmente espera-se equipar o veículo com uma camera capaz de enviar fotos
 
  == INTRODUÇÃO == 
 ![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/arquitetura_comunicacao.PNG)
+  Figura 1: Arquitetura do sistema de hardware do VANT.
+  De acordo com a Figura 1 temos a arquitetura geral do projeto, os itens enumerados cor-
+respondem a cada dispositivo encarregado de uma tarefa especíﬁca:
+(1) Painel de controle: Um cliente escrito em C executando em um ambiente "Windows", pode
+tanto exibir quando enviar comandos.
+(2): Emissor primário: Uma placa "Arduino Uno"conectada a um componente transceiver, se
+comunica via USB com o PC para receber e transmitir os comandos para o Rover.
+(3) Receptor primário: Outro "Arduino Uno"conectado ao outro transceiver, tem uma rotina
+que veriﬁca se algum sinal foi recebido e também pode enviar dados de volta ou encaminhar
+para o receptor secundário.
+(4) Receptor secundário: Um "Arduino Mega"que é utilizado para controle dos motores e dos sensores, pode receber comandos via IC2 do receptor primário para alteração da
+aceleração dos motores e posição dos braços mecânicos.
 
-!figcaption (casa)
+----------Inserir foto dos motores e dos arduínos---------------
+
+
+
+
+
