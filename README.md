@@ -32,3 +32,4 @@ Adicionalmente espera-se equipar o veículo com uma camera capaz de enviar fotos
  == INTRODUÇÃO == 
 ![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/arquitetura_comunicacao.PNG)
 
+!figcaption (casa)
