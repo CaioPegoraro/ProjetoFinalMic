@@ -19,6 +19,7 @@ namespace VantPainelDeControle
         int pacote_recebido;
         int status_buzzer = 0;
         int status_motores = 0;
+        int status_laser = 0;
 
         public Form1()
         {
@@ -140,8 +141,7 @@ namespace VantPainelDeControle
 
         private void btEnviar_Click(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen == true)          //porta está aberta
-                serialPort1.Write(txtVelocidadeTotal.Text);  //envia o texto presente no textbox Enviar
+           
         }
 
         private void trataDadoRecebido(object sender, EventArgs e)
@@ -203,25 +203,7 @@ namespace VantPainelDeControle
 
         private void btnConfirmaVelocidadeTotal_Click(object sender, EventArgs e)
         {
-            // 006 # Controlar velocidade gerais dos motores
-            // retorno: nao
-            // valor: sim
-
-            // cmd = 0006
-            //valor = dinamico
-
-            //                        cmd  valor
-            byte temp = byte.Parse(txtVelocidadeTotal.Text);
-            byte[] data = new byte[] { 006, temp };
-
-            if (serialPort1.IsOpen == true)
-            {//porta está aberta
-                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
-
-            }
-            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
-            textBoxReceber.AppendText("cmd: 0006 \n");
-            textBoxReceber.AppendText("valor: " + txtVelocidadeTotal.Text + "\n\n");
+            
 
         }
 
@@ -241,7 +223,7 @@ namespace VantPainelDeControle
             //valor = 0000
 
             //                        cmd  valor
-            byte[] data = new byte[] { 125, 0 };
+            byte[] data = new byte[] { 0125, 0000 };
 
             if (serialPort1.IsOpen == true)
             {//porta está aberta
@@ -351,11 +333,10 @@ namespace VantPainelDeControle
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            //btn: calibrar motores
-            //função: envia um comando para iniciar a sequência de calibração para armar os ECS's
-            //        em alguns casos o esc4 não calibrava na função disposta pelo SETUP.
+            //btn: parar motores dc
+            //função: envia um comando para parar os motores dc
 
-            byte[] data = new byte[] { 0007, 0 };
+            byte[] data = new byte[] { 0007, 0000 };
 
             if (serialPort1.IsOpen == true)
             {//porta está aberta
@@ -368,48 +349,7 @@ namespace VantPainelDeControle
         }
 
         private void btnLiberarMotores_Click(object sender, EventArgs e)
-        {   // cmd:
-            // 0080 # Liberar 
-            // 0090 # Travar
-            // retorno: nao
-            // valor: nao
-
-
-            if (status_motores == 0) //motores estao desligados
-            {
-                status_motores = 1;
-                lblLiberarMotores.Text = "ON";
-                lblLiberarMotores.ForeColor = System.Drawing.Color.Green;
-
-                byte[] data = new byte[] { 008, 0 };
-
-                if (serialPort1.IsOpen == true)
-                {//porta está aberta
-                    serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
-                }
-
-                textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
-                textBoxReceber.AppendText("cmd: 0008 \n");
-                textBoxReceber.AppendText("valor: 0000 \n\n");
-
-            }
-            else //motores estao ligados
-            {
-                status_motores = 0;
-                lblLiberarMotores.Text = "OFF";
-                lblLiberarMotores.ForeColor = System.Drawing.Color.Red;
-
-                byte[] data = new byte[] { 009, 0 };
-
-                if (serialPort1.IsOpen == true)
-                {//porta está aberta
-                    serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
-                }
-
-                textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
-                textBoxReceber.AppendText("cmd: 0009 \n");
-                textBoxReceber.AppendText("valor: 0000 \n\n");
-            }
+        {   
 
         }
 
@@ -421,7 +361,7 @@ namespace VantPainelDeControle
             // valor: sim
             //                        cmd  valor
             byte temp = byte.Parse(lblM1.Text);
-            byte[] data = new byte[] { 001, temp };
+            byte[] data = new byte[] { 0001, temp };
 
             if (serialPort1.IsOpen == true)
             {//porta está aberta
@@ -502,8 +442,7 @@ namespace VantPainelDeControle
 
             int numero;
             int.TryParse(lblM1.Text, out numero);
-            lblM1.Text = (numero + 1).ToString();
-
+            lblM1.Text = (numero + Convert.ToInt16(txt_intervalo_angulo.Text)).ToString();
 
             //                        cmd  valor
             byte temp = byte.Parse(lblM1.Text);
@@ -525,7 +464,7 @@ namespace VantPainelDeControle
 
             int numero;
             int.TryParse(lblM1.Text, out numero);
-            lblM1.Text = (numero - 1).ToString();
+            lblM1.Text = (numero - Convert.ToInt16(txt_intervalo_angulo.Text)).ToString();
 
 
             //                        cmd  valor
@@ -546,7 +485,7 @@ namespace VantPainelDeControle
         {
             int numero;
             int.TryParse(lblM2.Text, out numero);
-            lblM2.Text = (numero + 1).ToString();
+            lblM2.Text = (numero + Convert.ToInt16(txt_intervalo_angulo.Text)).ToString();
 
 
             //                        cmd  valor
@@ -567,7 +506,7 @@ namespace VantPainelDeControle
         {
             int numero;
             int.TryParse(lblM2.Text, out numero);
-            lblM2.Text = (numero - 1).ToString();
+            lblM2.Text = (numero - Convert.ToInt16(txt_intervalo_angulo.Text)).ToString();
 
 
             //                        cmd  valor
@@ -588,7 +527,7 @@ namespace VantPainelDeControle
         {
             int numero;
             int.TryParse(lblM3.Text, out numero);
-            lblM3.Text = (numero + 1).ToString();
+            lblM3.Text = (numero + Convert.ToInt16(txt_intervalo_angulo.Text)).ToString();
 
 
             //                        cmd  valor
@@ -609,7 +548,7 @@ namespace VantPainelDeControle
         {
             int numero;
             int.TryParse(lblM3.Text, out numero);
-            lblM3.Text = (numero - 1).ToString();
+            lblM3.Text = (numero - Convert.ToInt16(txt_intervalo_angulo.Text)).ToString();
 
 
             //                        cmd  valor
@@ -630,7 +569,7 @@ namespace VantPainelDeControle
         {
             int numero;
             int.TryParse(lblM4.Text, out numero);
-            lblM4.Text = (numero + 1).ToString();
+            lblM4.Text = (numero + Convert.ToInt16(txt_intervalo_angulo.Text)).ToString();
 
 
             //                        cmd  valor
@@ -651,7 +590,7 @@ namespace VantPainelDeControle
         {
             int numero;
             int.TryParse(lblM4.Text, out numero);
-            lblM4.Text = (numero - 1).ToString();
+            lblM4.Text = (numero - Convert.ToInt16(txt_intervalo_angulo.Text)).ToString();
 
 
             //                        cmd  valor
@@ -755,75 +694,328 @@ namespace VantPainelDeControle
 
         private void btnMparar_Click(object sender, EventArgs e)
         {
-            //Para todos os motores
-
-            //envia valor para parar o motor4
-
-            int numero = 65;
-            txtVelocidadeTotal.Text = (numero).ToString();
-
-            //                        cmd  valor
-            byte temp = byte.Parse(txtVelocidadeTotal.Text);
-            byte[] data = new byte[] { 006, temp };
-
-            if (serialPort1.IsOpen == true)
-            {//porta está aberta
-                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
-
-            }
-            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
-            textBoxReceber.AppendText("cmd: 0006 \n");
-            textBoxReceber.AppendText("valor: " + txtVelocidadeTotal.Text + "\n\n");
-
+         
         }
 
         private void btnMmais_Click(object sender, EventArgs e)
         {
-            //incrementa o valor da textbox do motor1 e set a nova velocidade
-
-            int numero;
-            int.TryParse(txtVelocidadeTotal.Text, out numero);
-            txtVelocidadeTotal.Text = (numero + 1).ToString();
-
-            //                        cmd  valor
-            byte temp = byte.Parse(txtVelocidadeTotal.Text);
-            byte[] data = new byte[] { 006, temp };
-
-            if (serialPort1.IsOpen == true)
-            {//porta está aberta
-                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
-
-            }
-            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
-            textBoxReceber.AppendText("cmd: 0006 \n");
-            textBoxReceber.AppendText("valor: " + txtVelocidadeTotal.Text + "\n\n");
+           
         }
 
         private void btnMmenos_Click(object sender, EventArgs e)
         {
-            //incrementa o valor da textbox do motor1 e set a nova velocidade
-
-            int numero;
-            int.TryParse(txtVelocidadeTotal.Text, out numero);
-            txtVelocidadeTotal.Text = (numero - 1).ToString();
-
-            //                        cmd  valor
-            byte temp = byte.Parse(txtVelocidadeTotal.Text);
-            byte[] data = new byte[] { 006, temp };
-
-            if (serialPort1.IsOpen == true)
-            {//porta está aberta
-                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
-
-            }
-            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
-            textBoxReceber.AppendText("cmd: 0006 \n");
-            textBoxReceber.AppendText("valor: " + txtVelocidadeTotal.Text + "\n\n");
+           
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_frente_MouseDown(object sender, MouseEventArgs e)
+        {
+            //cliclou no botao para frente: envia comando para motores dc 
+            // cmd:
+            // 0005 # motores dc para frente
+            // retorno: nao
+            // valor: sim (velocidade)
+
+            //                        cmd  valor
+            byte temp = byte.Parse(lbl_veloDC.Text);
+            byte[] data = new byte[] { 0005, temp };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0005 \n");
+            textBoxReceber.AppendText("valor: " + lbl_veloDC.Text + "\n\n");
+
+        }
+
+        private void btn_frente_MouseUp(object sender, MouseEventArgs e)
+        {
+            //enviar comando para parar
+            byte[] data = new byte[] { 0007, 0000 };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0007 \n");
+            textBoxReceber.AppendText("valor: 0000 \n\n");
+        }
+
+        private void btn_abrir_Click(object sender, EventArgs e)
+        {
+            // cmd:
+            // 0003 # controledo angulo personalizado (abrir garra)
+            // retorno: nao
+            // valor: sim
+            byte[] data = new byte[] { 0003, 0090 };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0003 \n");
+            textBoxReceber.AppendText("valor: 0090 \n\n");
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            // cmd:
+            // 0003 # controledo angulo personalizado (fechar garra)
+            // retorno: nao
+            // valor: sim
+            byte[] data = new byte[] { 0003, 0050 };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0003 \n");
+            textBoxReceber.AppendText("valor: 0050 \n\n");
+        }
+
+        private void btn_tras_MouseDown(object sender, MouseEventArgs e)
+        {
+            //cliclou no botao para frente: envia comando para motores dc 
+            // cmd:
+            // 0006 # motores dc para tras
+            // retorno: nao
+            // valor: sim (velocidade)
+
+            //                        cmd  valor
+            byte temp = byte.Parse(lbl_veloDC.Text);
+            byte[] data = new byte[] { 0006, temp };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0006 \n");
+            textBoxReceber.AppendText("valor: " + lbl_veloDC.Text + "\n\n");
+        }
+
+        private void btn_tras_MouseUp(object sender, MouseEventArgs e)
+        {
+            //enviar comando para parar
+            byte[] data = new byte[] { 0007, 0000 };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0007 \n");
+            textBoxReceber.AppendText("valor: 0000 \n\n");
+        }
+
+        private void btn_dir_MouseDown(object sender, MouseEventArgs e)
+        {
+            //cliclou no botao para direita: envia comando para motores dc 
+            // cmd:
+            // 0008 # motores dc para direita (lados alternados
+            // retorno: nao
+            // valor: sim (velocidade)
+
+            //                        cmd  valor
+            byte temp = byte.Parse(lbl_veloDC.Text);
+            byte[] data = new byte[] { 0008, temp };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0008 \n");
+            textBoxReceber.AppendText("valor: " + lbl_veloDC.Text + "\n\n");
+        }
+
+        private void btn_esq_MouseDown(object sender, MouseEventArgs e)
+        {
+            //cliclou no botao para esquerda: envia comando para motores dc 
+            // cmd:
+            // 0009 # motores dc para esquerda (lados alternados)
+            // retorno: nao
+            // valor: sim (velocidade)
+
+            //                        cmd  valor
+            byte temp = byte.Parse(lbl_veloDC.Text);
+            byte[] data = new byte[] { 0009, temp };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0009 \n");
+            textBoxReceber.AppendText("valor: " + lbl_veloDC.Text + "\n\n");
+        }
+
+        private void btn_esq_MouseUp(object sender, MouseEventArgs e)
+        {
+            //enviar comando para parar
+            byte[] data = new byte[] { 0007, 0000 };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0007 \n");
+            textBoxReceber.AppendText("valor: 0000 \n\n");
+        }
+
+        private void btn_dir_MouseUp(object sender, MouseEventArgs e)
+        {
+            //enviar comando para parar
+            byte[] data = new byte[] { 0007, 0000 };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0007 \n");
+            textBoxReceber.AppendText("valor: 0000 \n\n");
+        }
+
+        private void btn_esq_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // 0016 e 0017 # Acionar laser
+            // retorno: nao
+            // valor: nao
+
+            // cmd  = 0016
+            //valor = 0000
+
+            //                        cmd  valor
+
+            if (this.status_laser == 1)
+            {
+                //inverter para desligado
+                status_laser = 0;
+                byte[] data = new byte[] { 16, 0 };
+                lbl_laser.Text = "OFF";
+                lbl_laser.ForeColor = System.Drawing.Color.Red;
+
+                if (serialPort1.IsOpen == true)
+                {//porta está aberta
+                    serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+                    //reportar comando enviado no prompt de comando
+                    textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+                    textBoxReceber.AppendText("cmd: 0016 \n");
+                    textBoxReceber.AppendText("valor: 0000 \n\n");
+                }
+
+            }
+            else if (this.status_laser == 0)
+            {
+                //inverter para ligado
+                status_laser = 1;
+                byte[] data = new byte[] { 17, 0000 };
+                lbl_laser.Text = "ON";
+                lbl_laser.ForeColor = System.Drawing.Color.Green;
+
+                if (serialPort1.IsOpen == true)
+                {//porta está aberta
+                    serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+                    //reportar comando enviado no prompt de comando
+                    textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+                    textBoxReceber.AppendText("cmd: 0017 \n");
+                    textBoxReceber.AppendText("valor: 0000 \n\n");
+                }
+
+            }
+
+        }
+
+        private void btnM1mais_MouseUp(object sender, MouseEventArgs e)
+        {
+            //envia sinal para parar a movimentacao
+
+        }
+
+        private void btn_display_Click(object sender, EventArgs e)
+        {
+            //comando para operar o display lcd
+            char[] strArr = txt_display_1.Text.ToCharArray();
+
+            //textBoxReceber.AppendText(strArr[0].ToString());
+            int tam = strArr.Length; //quantidade de caracteres
+
+            //textBoxReceber.AppendText(tam.ToString());
+
+            byte[] data = new byte[] { 0020, 0000 };
+
+            for (int i = 0; i < tam; i++)
+            {
+                //envia caractere por caractere para o display lcd
+                data[0] = 0020;
+                data[1] = Convert.ToByte(strArr[i]); //converte 1 caractere para byte e envia
+
+                if (serialPort1.IsOpen == true)
+                {//porta está aberta
+                    serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+                }
+                textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+                textBoxReceber.AppendText("cmd: 0020 \n");
+                textBoxReceber.AppendText("valor: " + data[1].ToString() + " \n\n");
+            }
+
+            /*
+            byte[] data = new byte[] { 0020, 0001 };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0020 \n");
+            textBoxReceber.AppendText("valor: 0001 \n\n");
+            */
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //limpar display
+            byte[] data = new byte[] { 0020, 0000 };
+
+                if (serialPort1.IsOpen == true)
+                {//porta está aberta
+                    serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+                }
+                textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+                textBoxReceber.AppendText("cmd: 0020 \n");
+                textBoxReceber.AppendText("valor: 0000 \n\n");
+            
         }
     }
 }

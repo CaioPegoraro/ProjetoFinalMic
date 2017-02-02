@@ -33,22 +33,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btConectar = new System.Windows.Forms.Button();
             this.btnCalibrarMotores = new System.Windows.Forms.GroupBox();
+            this.lbl_veloDC = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnPousar = new System.Windows.Forms.Button();
-            this.btnConfirmaVelocidadeTotal = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtVelocidadeTotal = new System.Windows.Forms.TextBox();
+            this.btn_tras = new System.Windows.Forms.Button();
+            this.btn_frente = new System.Windows.Forms.Button();
+            this.btn_esq = new System.Windows.Forms.Button();
+            this.btn_dir = new System.Windows.Forms.Button();
             this.btnConexaoRemota = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,26 +49,15 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timerCOM = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnMmenos = new System.Windows.Forms.Button();
-            this.btnMmais = new System.Windows.Forms.Button();
-            this.btnMparar = new System.Windows.Forms.Button();
-            this.btnM4parar = new System.Windows.Forms.Button();
-            this.btnM3parar = new System.Windows.Forms.Button();
-            this.btnM2parar = new System.Windows.Forms.Button();
-            this.btnM1parar = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.btn_fechar = new System.Windows.Forms.Button();
+            this.btn_abrir = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.btnBuzzer = new System.Windows.Forms.Button();
+            this.lblStatusBuzzer = new System.Windows.Forms.Label();
+            this.lbl_temperatura = new System.Windows.Forms.TextBox();
             this.btnM4menos = new System.Windows.Forms.Button();
+            this.lblStatusConexao = new System.Windows.Forms.Label();
             this.btnM4mais = new System.Windows.Forms.Button();
             this.btnM2menos = new System.Windows.Forms.Button();
             this.btnM2mais = new System.Windows.Forms.Button();
@@ -96,38 +77,38 @@
             this.lblM2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblM1 = new System.Windows.Forms.TextBox();
-            this.lblStatusConexao = new System.Windows.Forms.Label();
-            this.lblStatusAutomatico = new System.Windows.Forms.Label();
-            this.btnPilotoAuto = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.lblNivelBateria = new System.Windows.Forms.Label();
-            this.btnBuzzer = new System.Windows.Forms.Button();
-            this.lblStatusBuzzer = new System.Windows.Forms.Label();
             this.textBoxReceber = new System.Windows.Forms.TextBox();
             this.button25 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.btnAttBateria = new System.Windows.Forms.Button();
             this.timerStatusBateria = new System.Windows.Forms.Timer(this.components);
             this.timerStatusConexao = new System.Windows.Forms.Timer(this.components);
-            this.btnLiberarMotores = new System.Windows.Forms.Button();
-            this.lblLiberarMotores = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_display_1 = new System.Windows.Forms.TextBox();
+            this.btn_display = new System.Windows.Forms.Button();
+            this.lbl_laser = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txt_intervalo_angulo = new System.Windows.Forms.TextBox();
             this.btnCalibrarMotores.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(93, 53);
+            this.comboBox1.Location = new System.Drawing.Point(93, 34);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(119, 21);
             this.comboBox1.TabIndex = 6;
             // 
             // btConectar
             // 
-            this.btConectar.Location = new System.Drawing.Point(12, 51);
+            this.btConectar.Location = new System.Drawing.Point(12, 32);
             this.btConectar.Name = "btConectar";
             this.btConectar.Size = new System.Drawing.Size(75, 23);
             this.btConectar.TabIndex = 5;
@@ -137,50 +118,46 @@
             // 
             // btnCalibrarMotores
             // 
+            this.btnCalibrarMotores.Controls.Add(this.lbl_veloDC);
             this.btnCalibrarMotores.Controls.Add(this.button10);
-            this.btnCalibrarMotores.Controls.Add(this.button11);
             this.btnCalibrarMotores.Controls.Add(this.label3);
             this.btnCalibrarMotores.Controls.Add(this.label2);
-            this.btnCalibrarMotores.Controls.Add(this.button8);
-            this.btnCalibrarMotores.Controls.Add(this.button7);
-            this.btnCalibrarMotores.Controls.Add(this.button6);
-            this.btnCalibrarMotores.Controls.Add(this.button5);
-            this.btnCalibrarMotores.Controls.Add(this.button4);
-            this.btnCalibrarMotores.Controls.Add(this.button3);
-            this.btnCalibrarMotores.Controls.Add(this.button2);
-            this.btnCalibrarMotores.Controls.Add(this.button1);
-            this.btnCalibrarMotores.Controls.Add(this.btnPousar);
-            this.btnCalibrarMotores.Location = new System.Drawing.Point(230, 97);
+            this.btnCalibrarMotores.Controls.Add(this.btn_tras);
+            this.btnCalibrarMotores.Controls.Add(this.btn_frente);
+            this.btnCalibrarMotores.Controls.Add(this.btn_esq);
+            this.btnCalibrarMotores.Controls.Add(this.btn_dir);
+            this.btnCalibrarMotores.Controls.Add(this.label8);
+            this.btnCalibrarMotores.Controls.Add(this.lbl_temperatura);
+            this.btnCalibrarMotores.Location = new System.Drawing.Point(232, 89);
             this.btnCalibrarMotores.Name = "btnCalibrarMotores";
-            this.btnCalibrarMotores.Size = new System.Drawing.Size(446, 521);
+            this.btnCalibrarMotores.Size = new System.Drawing.Size(446, 542);
             this.btnCalibrarMotores.TabIndex = 4;
             this.btnCalibrarMotores.TabStop = false;
             this.btnCalibrarMotores.Text = "Controle de direção";
             // 
+            // lbl_veloDC
+            // 
+            this.lbl_veloDC.Location = new System.Drawing.Point(202, 259);
+            this.lbl_veloDC.Name = "lbl_veloDC";
+            this.lbl_veloDC.Size = new System.Drawing.Size(54, 20);
+            this.lbl_veloDC.TabIndex = 51;
+            this.lbl_veloDC.Text = "120";
+            this.lbl_veloDC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(36, 463);
+            this.button10.Location = new System.Drawing.Point(36, 477);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(387, 29);
             this.button10.TabIndex = 42;
-            this.button10.Text = "Calibrar motores";
+            this.button10.Text = "parar motores";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click_1);
-            // 
-            // button11
-            // 
-            this.button11.Image = global::VantPainelDeControle.Properties.Resources.setaPouN;
-            this.button11.Location = new System.Drawing.Point(170, 191);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(121, 41);
-            this.button11.TabIndex = 10;
-            this.button11.Text = "Subir";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(199, 425);
+            this.label3.Location = new System.Drawing.Point(199, 442);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 9;
@@ -189,134 +166,66 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(182, 39);
+            this.label2.Location = new System.Drawing.Point(182, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Terminal NORTE";
             // 
-            // button8
+            // btn_tras
             // 
-            this.button8.Image = global::VantPainelDeControle.Properties.Resources.setaSud1;
-            this.button8.Location = new System.Drawing.Point(302, 297);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(121, 95);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "sudeste";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_tras.Image = global::VantPainelDeControle.Properties.Resources.setaTraN;
+            this.btn_tras.Location = new System.Drawing.Point(170, 330);
+            this.btn_tras.Name = "btn_tras";
+            this.btn_tras.Size = new System.Drawing.Size(121, 95);
+            this.btn_tras.TabIndex = 7;
+            this.btn_tras.Text = "tras";
+            this.btn_tras.UseVisualStyleBackColor = true;
+            this.btn_tras.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_tras_MouseDown);
+            this.btn_tras.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_tras_MouseUp);
             // 
-            // button7
+            // btn_frente
             // 
-            this.button7.Image = global::VantPainelDeControle.Properties.Resources.setaSudo1;
-            this.button7.Location = new System.Drawing.Point(36, 297);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(119, 95);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "sudoeste";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn_frente.Image = global::VantPainelDeControle.Properties.Resources.setaCimN;
+            this.btn_frente.Location = new System.Drawing.Point(170, 122);
+            this.btn_frente.Name = "btn_frente";
+            this.btn_frente.Size = new System.Drawing.Size(121, 96);
+            this.btn_frente.TabIndex = 6;
+            this.btn_frente.Text = "frente";
+            this.btn_frente.UseVisualStyleBackColor = true;
+            this.btn_frente.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_frente_MouseDown);
+            this.btn_frente.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_frente_MouseUp);
             // 
-            // button6
+            // btn_esq
             // 
-            this.button6.Image = global::VantPainelDeControle.Properties.Resources.setaNor1;
-            this.button6.Location = new System.Drawing.Point(36, 89);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(121, 96);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "noroeste";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_esq.Image = global::VantPainelDeControle.Properties.Resources.setaEsqN;
+            this.btn_esq.Location = new System.Drawing.Point(36, 226);
+            this.btn_esq.Name = "btn_esq";
+            this.btn_esq.Size = new System.Drawing.Size(121, 85);
+            this.btn_esq.TabIndex = 5;
+            this.btn_esq.Text = "esquerda";
+            this.btn_esq.UseVisualStyleBackColor = true;
+            this.btn_esq.Click += new System.EventHandler(this.btn_esq_Click);
+            this.btn_esq.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_esq_MouseDown);
+            this.btn_esq.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_esq_MouseUp);
             // 
-            // button5
+            // btn_dir
             // 
-            this.button5.Image = global::VantPainelDeControle.Properties.Resources.setaNord1;
-            this.button5.Location = new System.Drawing.Point(302, 89);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(121, 91);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "nordeste";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Image = global::VantPainelDeControle.Properties.Resources.setaTraN;
-            this.button4.Location = new System.Drawing.Point(170, 297);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 95);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "tras";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Image = global::VantPainelDeControle.Properties.Resources.setaCimN;
-            this.button3.Location = new System.Drawing.Point(170, 89);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 96);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "frente";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Image = global::VantPainelDeControle.Properties.Resources.setaEsqN;
-            this.button2.Location = new System.Drawing.Point(34, 194);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 85);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "esquerda";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::VantPainelDeControle.Properties.Resources.setaDirN;
-            this.button1.Location = new System.Drawing.Point(302, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 85);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "direita";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnPousar
-            // 
-            this.btnPousar.Image = global::VantPainelDeControle.Properties.Resources.setaPouN;
-            this.btnPousar.Location = new System.Drawing.Point(170, 238);
-            this.btnPousar.Name = "btnPousar";
-            this.btnPousar.Size = new System.Drawing.Size(121, 41);
-            this.btnPousar.TabIndex = 3;
-            this.btnPousar.Text = "Descer";
-            this.btnPousar.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirmaVelocidadeTotal
-            // 
-            this.btnConfirmaVelocidadeTotal.Location = new System.Drawing.Point(109, 258);
-            this.btnConfirmaVelocidadeTotal.Name = "btnConfirmaVelocidadeTotal";
-            this.btnConfirmaVelocidadeTotal.Size = new System.Drawing.Size(77, 23);
-            this.btnConfirmaVelocidadeTotal.TabIndex = 2;
-            this.btnConfirmaVelocidadeTotal.Text = "Confirmar";
-            this.btnConfirmaVelocidadeTotal.UseVisualStyleBackColor = true;
-            this.btnConfirmaVelocidadeTotal.Click += new System.EventHandler(this.btnConfirmaVelocidadeTotal_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 238);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Velocidade total :";
-            // 
-            // txtVelocidadeTotal
-            // 
-            this.txtVelocidadeTotal.Location = new System.Drawing.Point(111, 235);
-            this.txtVelocidadeTotal.Name = "txtVelocidadeTotal";
-            this.txtVelocidadeTotal.Size = new System.Drawing.Size(75, 20);
-            this.txtVelocidadeTotal.TabIndex = 0;
-            this.txtVelocidadeTotal.Text = "65";
+            this.btn_dir.Image = global::VantPainelDeControle.Properties.Resources.setaDirN;
+            this.btn_dir.Location = new System.Drawing.Point(302, 226);
+            this.btn_dir.Name = "btn_dir";
+            this.btn_dir.Size = new System.Drawing.Size(121, 85);
+            this.btn_dir.TabIndex = 4;
+            this.btn_dir.Text = "direita";
+            this.btn_dir.UseVisualStyleBackColor = true;
+            this.btn_dir.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_dir_MouseDown);
+            this.btn_dir.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_dir_MouseUp);
             // 
             // btnConexaoRemota
             // 
-            this.btnConexaoRemota.Location = new System.Drawing.Point(235, 24);
+            this.btnConexaoRemota.Location = new System.Drawing.Point(563, 28);
             this.btnConexaoRemota.Name = "btnConexaoRemota";
-            this.btnConexaoRemota.Size = new System.Drawing.Size(64, 46);
+            this.btnConexaoRemota.Size = new System.Drawing.Size(64, 44);
             this.btnConexaoRemota.TabIndex = 4;
             this.btnConexaoRemota.Text = "Conexão remota";
             this.btnConexaoRemota.UseVisualStyleBackColor = true;
@@ -363,29 +272,20 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnMmenos);
-            this.groupBox2.Controls.Add(this.btnMmais);
-            this.groupBox2.Controls.Add(this.btnMparar);
-            this.groupBox2.Controls.Add(this.btnM4parar);
-            this.groupBox2.Controls.Add(this.btnM3parar);
-            this.groupBox2.Controls.Add(this.btnM2parar);
-            this.groupBox2.Controls.Add(this.btnM1parar);
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txt_intervalo_angulo);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.btn_display);
+            this.groupBox2.Controls.Add(this.txt_display_1);
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.btn_fechar);
+            this.groupBox2.Controls.Add(this.btn_abrir);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnM4menos);
             this.groupBox2.Controls.Add(this.btnM4mais);
             this.groupBox2.Controls.Add(this.btnM2menos);
             this.groupBox2.Controls.Add(this.btnM2mais);
             this.groupBox2.Controls.Add(this.btnM3menos);
-            this.groupBox2.Controls.Add(this.btnConfirmaVelocidadeTotal);
-            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btnM3mais);
-            this.groupBox2.Controls.Add(this.txtVelocidadeTotal);
             this.groupBox2.Controls.Add(this.btnM1menos);
             this.groupBox2.Controls.Add(this.btnM1mais);
             this.groupBox2.Controls.Add(this.btnM4);
@@ -400,430 +300,55 @@
             this.groupBox2.Controls.Add(this.lblM2);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.lblM1);
-            this.groupBox2.Location = new System.Drawing.Point(696, 97);
+            this.groupBox2.Location = new System.Drawing.Point(699, 89);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(414, 521);
+            this.groupBox2.Size = new System.Drawing.Size(414, 542);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sensores";
             // 
-            // btnMmenos
+            // btn_fechar
             // 
-            this.btnMmenos.Location = new System.Drawing.Point(190, 258);
-            this.btnMmenos.Name = "btnMmenos";
-            this.btnMmenos.Size = new System.Drawing.Size(34, 23);
-            this.btnMmenos.TabIndex = 50;
-            this.btnMmenos.Text = "-";
-            this.btnMmenos.UseVisualStyleBackColor = true;
-            this.btnMmenos.Click += new System.EventHandler(this.btnMmenos_Click);
+            this.btn_fechar.Location = new System.Drawing.Point(316, 429);
+            this.btn_fechar.Name = "btn_fechar";
+            this.btn_fechar.Size = new System.Drawing.Size(75, 23);
+            this.btn_fechar.TabIndex = 49;
+            this.btn_fechar.Text = "fechar";
+            this.btn_fechar.UseVisualStyleBackColor = true;
+            this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
-            // btnMmais
+            // btn_abrir
             // 
-            this.btnMmais.Location = new System.Drawing.Point(223, 258);
-            this.btnMmais.Name = "btnMmais";
-            this.btnMmais.Size = new System.Drawing.Size(34, 23);
-            this.btnMmais.TabIndex = 49;
-            this.btnMmais.Text = "+";
-            this.btnMmais.UseVisualStyleBackColor = true;
-            this.btnMmais.Click += new System.EventHandler(this.btnMmais_Click);
+            this.btn_abrir.Location = new System.Drawing.Point(316, 400);
+            this.btn_abrir.Name = "btn_abrir";
+            this.btn_abrir.Size = new System.Drawing.Size(75, 23);
+            this.btn_abrir.TabIndex = 42;
+            this.btn_abrir.Text = "abrir";
+            this.btn_abrir.UseVisualStyleBackColor = true;
+            this.btn_abrir.Click += new System.EventHandler(this.btn_abrir_Click);
             // 
-            // btnMparar
+            // label1
             // 
-            this.btnMparar.Image = ((System.Drawing.Image)(resources.GetObject("btnMparar.Image")));
-            this.btnMparar.Location = new System.Drawing.Point(190, 235);
-            this.btnMparar.Name = "btnMparar";
-            this.btnMparar.Size = new System.Drawing.Size(67, 23);
-            this.btnMparar.TabIndex = 48;
-            this.btnMparar.UseVisualStyleBackColor = true;
-            this.btnMparar.Click += new System.EventHandler(this.btnMparar_Click);
-            // 
-            // btnM4parar
-            // 
-            this.btnM4parar.Image = ((System.Drawing.Image)(resources.GetObject("btnM4parar.Image")));
-            this.btnM4parar.Location = new System.Drawing.Point(348, 463);
-            this.btnM4parar.Name = "btnM4parar";
-            this.btnM4parar.Size = new System.Drawing.Size(41, 23);
-            this.btnM4parar.TabIndex = 47;
-            this.btnM4parar.UseVisualStyleBackColor = true;
-            this.btnM4parar.Click += new System.EventHandler(this.btnM4parar_Click);
-            // 
-            // btnM3parar
-            // 
-            this.btnM3parar.Image = ((System.Drawing.Image)(resources.GetObject("btnM3parar.Image")));
-            this.btnM3parar.Location = new System.Drawing.Point(151, 463);
-            this.btnM3parar.Name = "btnM3parar";
-            this.btnM3parar.Size = new System.Drawing.Size(41, 23);
-            this.btnM3parar.TabIndex = 46;
-            this.btnM3parar.UseVisualStyleBackColor = true;
-            this.btnM3parar.Click += new System.EventHandler(this.btnM3parar_Click);
-            // 
-            // btnM2parar
-            // 
-            this.btnM2parar.Image = ((System.Drawing.Image)(resources.GetObject("btnM2parar.Image")));
-            this.btnM2parar.Location = new System.Drawing.Point(348, 356);
-            this.btnM2parar.Name = "btnM2parar";
-            this.btnM2parar.Size = new System.Drawing.Size(41, 23);
-            this.btnM2parar.TabIndex = 45;
-            this.btnM2parar.UseVisualStyleBackColor = true;
-            this.btnM2parar.Click += new System.EventHandler(this.btnM2parar_Click);
-            // 
-            // btnM1parar
-            // 
-            this.btnM1parar.Image = ((System.Drawing.Image)(resources.GetObject("btnM1parar.Image")));
-            this.btnM1parar.Location = new System.Drawing.Point(151, 356);
-            this.btnM1parar.Name = "btnM1parar";
-            this.btnM1parar.Size = new System.Drawing.Size(41, 23);
-            this.btnM1parar.TabIndex = 44;
-            this.btnM1parar.UseVisualStyleBackColor = true;
-            this.btnM1parar.Click += new System.EventHandler(this.btnM1parar_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Location = new System.Drawing.Point(20, 49);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(377, 168);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Acelerômetro";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(66, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(67, 20);
-            this.textBox2.TabIndex = 54;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(66, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(67, 20);
-            this.textBox1.TabIndex = 51;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(38, 79);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(22, 13);
-            this.label12.TabIndex = 53;
-            this.label12.Text = "Ay:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(38, 40);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(22, 13);
-            this.label11.TabIndex = 52;
-            this.label11.Text = "Ax:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 40);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 13);
-            this.label10.TabIndex = 51;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 226);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 13);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Controle dos servo motores:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 22);
+            this.label8.Location = new System.Drawing.Point(15, 34);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 13);
+            this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 37;
-            this.label8.Text = "Distância até o chão:";
+            this.label8.Text = "Temperatura:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(131, 19);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(67, 20);
-            this.textBox9.TabIndex = 36;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(275, 418);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(67, 20);
-            this.textBox8.TabIndex = 35;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(275, 304);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(67, 20);
-            this.textBox7.TabIndex = 34;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(78, 415);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(67, 20);
-            this.textBox6.TabIndex = 33;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(78, 304);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(67, 20);
-            this.textBox5.TabIndex = 32;
-            // 
-            // btnM4menos
-            // 
-            this.btnM4menos.Location = new System.Drawing.Point(275, 463);
-            this.btnM4menos.Name = "btnM4menos";
-            this.btnM4menos.Size = new System.Drawing.Size(34, 23);
-            this.btnM4menos.TabIndex = 31;
-            this.btnM4menos.Text = "-";
-            this.btnM4menos.UseVisualStyleBackColor = true;
-            this.btnM4menos.Click += new System.EventHandler(this.btnM4menos_Click);
-            // 
-            // btnM4mais
-            // 
-            this.btnM4mais.Location = new System.Drawing.Point(308, 463);
-            this.btnM4mais.Name = "btnM4mais";
-            this.btnM4mais.Size = new System.Drawing.Size(34, 23);
-            this.btnM4mais.TabIndex = 30;
-            this.btnM4mais.Text = "+";
-            this.btnM4mais.UseVisualStyleBackColor = true;
-            this.btnM4mais.Click += new System.EventHandler(this.btnM4mais_Click);
-            // 
-            // btnM2menos
-            // 
-            this.btnM2menos.Location = new System.Drawing.Point(275, 356);
-            this.btnM2menos.Name = "btnM2menos";
-            this.btnM2menos.Size = new System.Drawing.Size(34, 23);
-            this.btnM2menos.TabIndex = 29;
-            this.btnM2menos.Text = "-";
-            this.btnM2menos.UseVisualStyleBackColor = true;
-            this.btnM2menos.Click += new System.EventHandler(this.btnM2menos_Click);
-            // 
-            // btnM2mais
-            // 
-            this.btnM2mais.Location = new System.Drawing.Point(308, 356);
-            this.btnM2mais.Name = "btnM2mais";
-            this.btnM2mais.Size = new System.Drawing.Size(34, 23);
-            this.btnM2mais.TabIndex = 28;
-            this.btnM2mais.Text = "+";
-            this.btnM2mais.UseVisualStyleBackColor = true;
-            this.btnM2mais.Click += new System.EventHandler(this.btnM2mais_Click);
-            // 
-            // btnM3menos
-            // 
-            this.btnM3menos.Location = new System.Drawing.Point(78, 463);
-            this.btnM3menos.Name = "btnM3menos";
-            this.btnM3menos.Size = new System.Drawing.Size(34, 23);
-            this.btnM3menos.TabIndex = 27;
-            this.btnM3menos.Text = "-";
-            this.btnM3menos.UseVisualStyleBackColor = true;
-            this.btnM3menos.Click += new System.EventHandler(this.btnM3menos_Click);
-            // 
-            // btnM3mais
-            // 
-            this.btnM3mais.Location = new System.Drawing.Point(111, 463);
-            this.btnM3mais.Name = "btnM3mais";
-            this.btnM3mais.Size = new System.Drawing.Size(34, 23);
-            this.btnM3mais.TabIndex = 26;
-            this.btnM3mais.Text = "+";
-            this.btnM3mais.UseVisualStyleBackColor = true;
-            this.btnM3mais.Click += new System.EventHandler(this.btnM3mais_Click);
-            // 
-            // btnM1menos
-            // 
-            this.btnM1menos.Location = new System.Drawing.Point(78, 356);
-            this.btnM1menos.Name = "btnM1menos";
-            this.btnM1menos.Size = new System.Drawing.Size(34, 23);
-            this.btnM1menos.TabIndex = 25;
-            this.btnM1menos.Text = "-";
-            this.btnM1menos.UseVisualStyleBackColor = true;
-            this.btnM1menos.Click += new System.EventHandler(this.btnM1menos_Click);
-            // 
-            // btnM1mais
-            // 
-            this.btnM1mais.Location = new System.Drawing.Point(111, 356);
-            this.btnM1mais.Name = "btnM1mais";
-            this.btnM1mais.Size = new System.Drawing.Size(34, 23);
-            this.btnM1mais.TabIndex = 24;
-            this.btnM1mais.Text = "+";
-            this.btnM1mais.UseVisualStyleBackColor = true;
-            this.btnM1mais.Click += new System.EventHandler(this.btnM1mais_Click);
-            // 
-            // btnM4
-            // 
-            this.btnM4.Location = new System.Drawing.Point(348, 438);
-            this.btnM4.Name = "btnM4";
-            this.btnM4.Size = new System.Drawing.Size(41, 23);
-            this.btnM4.TabIndex = 23;
-            this.btnM4.Text = "set";
-            this.btnM4.UseVisualStyleBackColor = true;
-            this.btnM4.Click += new System.EventHandler(this.btnM4_Click);
-            // 
-            // btnM3
-            // 
-            this.btnM3.Location = new System.Drawing.Point(151, 438);
-            this.btnM3.Name = "btnM3";
-            this.btnM3.Size = new System.Drawing.Size(41, 23);
-            this.btnM3.TabIndex = 22;
-            this.btnM3.Text = "set";
-            this.btnM3.UseVisualStyleBackColor = true;
-            this.btnM3.Click += new System.EventHandler(this.btnM3_Click);
-            // 
-            // btnM2
-            // 
-            this.btnM2.Location = new System.Drawing.Point(348, 327);
-            this.btnM2.Name = "btnM2";
-            this.btnM2.Size = new System.Drawing.Size(41, 23);
-            this.btnM2.TabIndex = 21;
-            this.btnM2.Text = "set";
-            this.btnM2.UseVisualStyleBackColor = true;
-            this.btnM2.Click += new System.EventHandler(this.btnM2_Click);
-            // 
-            // btnM1
-            // 
-            this.btnM1.Location = new System.Drawing.Point(151, 327);
-            this.btnM1.Name = "btnM1";
-            this.btnM1.Size = new System.Drawing.Size(41, 23);
-            this.btnM1.TabIndex = 20;
-            this.btnM1.Text = "set";
-            this.btnM1.UseVisualStyleBackColor = true;
-            this.btnM1.Click += new System.EventHandler(this.btnM1_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(220, 444);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Motor 4 :";
-            // 
-            // lblM4
-            // 
-            this.lblM4.Location = new System.Drawing.Point(275, 441);
-            this.lblM4.Name = "lblM4";
-            this.lblM4.Size = new System.Drawing.Size(67, 20);
-            this.lblM4.TabIndex = 18;
-            this.lblM4.Text = "65";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 444);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Motor 3 :";
-            // 
-            // lblM3
-            // 
-            this.lblM3.Location = new System.Drawing.Point(78, 441);
-            this.lblM3.Name = "lblM3";
-            this.lblM3.Size = new System.Drawing.Size(67, 20);
-            this.lblM3.TabIndex = 16;
-            this.lblM3.Text = "65";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(220, 333);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Motor 2 :";
-            // 
-            // lblM2
-            // 
-            this.lblM2.Location = new System.Drawing.Point(275, 330);
-            this.lblM2.Name = "lblM2";
-            this.lblM2.Size = new System.Drawing.Size(67, 20);
-            this.lblM2.TabIndex = 14;
-            this.lblM2.Text = "65";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 333);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Motor 1 :";
-            // 
-            // lblM1
-            // 
-            this.lblM1.Location = new System.Drawing.Point(78, 330);
-            this.lblM1.Name = "lblM1";
-            this.lblM1.Size = new System.Drawing.Size(67, 20);
-            this.lblM1.TabIndex = 10;
-            this.lblM1.Text = "65";
-            // 
-            // lblStatusConexao
-            // 
-            this.lblStatusConexao.AutoSize = true;
-            this.lblStatusConexao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusConexao.ForeColor = System.Drawing.Color.Red;
-            this.lblStatusConexao.Location = new System.Drawing.Point(305, 33);
-            this.lblStatusConexao.Name = "lblStatusConexao";
-            this.lblStatusConexao.Size = new System.Drawing.Size(49, 24);
-            this.lblStatusConexao.TabIndex = 12;
-            this.lblStatusConexao.Text = "OFF";
-            // 
-            // lblStatusAutomatico
-            // 
-            this.lblStatusAutomatico.AutoSize = true;
-            this.lblStatusAutomatico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusAutomatico.ForeColor = System.Drawing.Color.Red;
-            this.lblStatusAutomatico.Location = new System.Drawing.Point(476, 33);
-            this.lblStatusAutomatico.Name = "lblStatusAutomatico";
-            this.lblStatusAutomatico.Size = new System.Drawing.Size(49, 24);
-            this.lblStatusAutomatico.TabIndex = 11;
-            this.lblStatusAutomatico.Text = "OFF";
-            // 
-            // btnPilotoAuto
-            // 
-            this.btnPilotoAuto.Location = new System.Drawing.Point(400, 24);
-            this.btnPilotoAuto.Name = "btnPilotoAuto";
-            this.btnPilotoAuto.Size = new System.Drawing.Size(70, 44);
-            this.btnPilotoAuto.TabIndex = 10;
-            this.btnPilotoAuto.Text = "Piloto automático";
-            this.btnPilotoAuto.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(914, 61);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 13);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Nível bateria :";
-            // 
-            // lblNivelBateria
-            // 
-            this.lblNivelBateria.AutoSize = true;
-            this.lblNivelBateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNivelBateria.Location = new System.Drawing.Point(994, 50);
-            this.lblNivelBateria.Name = "lblNivelBateria";
-            this.lblNivelBateria.Size = new System.Drawing.Size(114, 24);
-            this.lblNivelBateria.TabIndex = 39;
-            this.lblNivelBateria.Text = "Analisando..";
             // 
             // btnBuzzer
             // 
-            this.btnBuzzer.Location = new System.Drawing.Point(558, 25);
+            this.btnBuzzer.Location = new System.Drawing.Point(726, 28);
             this.btnBuzzer.Name = "btnBuzzer";
             this.btnBuzzer.Size = new System.Drawing.Size(64, 44);
             this.btnBuzzer.TabIndex = 13;
@@ -836,24 +361,251 @@
             this.lblStatusBuzzer.AutoSize = true;
             this.lblStatusBuzzer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusBuzzer.ForeColor = System.Drawing.Color.Red;
-            this.lblStatusBuzzer.Location = new System.Drawing.Point(628, 33);
+            this.lblStatusBuzzer.Location = new System.Drawing.Point(796, 37);
             this.lblStatusBuzzer.Name = "lblStatusBuzzer";
             this.lblStatusBuzzer.Size = new System.Drawing.Size(49, 24);
             this.lblStatusBuzzer.TabIndex = 14;
             this.lblStatusBuzzer.Text = "OFF";
             // 
+            // lbl_temperatura
+            // 
+            this.lbl_temperatura.Location = new System.Drawing.Point(97, 31);
+            this.lbl_temperatura.Name = "lbl_temperatura";
+            this.lbl_temperatura.ReadOnly = true;
+            this.lbl_temperatura.Size = new System.Drawing.Size(67, 20);
+            this.lbl_temperatura.TabIndex = 36;
+            // 
+            // btnM4menos
+            // 
+            this.btnM4menos.Location = new System.Drawing.Point(156, 492);
+            this.btnM4menos.Name = "btnM4menos";
+            this.btnM4menos.Size = new System.Drawing.Size(34, 23);
+            this.btnM4menos.TabIndex = 31;
+            this.btnM4menos.Text = "-";
+            this.btnM4menos.UseVisualStyleBackColor = true;
+            this.btnM4menos.Click += new System.EventHandler(this.btnM4menos_Click);
+            // 
+            // lblStatusConexao
+            // 
+            this.lblStatusConexao.AutoSize = true;
+            this.lblStatusConexao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusConexao.ForeColor = System.Drawing.Color.Red;
+            this.lblStatusConexao.Location = new System.Drawing.Point(635, 36);
+            this.lblStatusConexao.Name = "lblStatusConexao";
+            this.lblStatusConexao.Size = new System.Drawing.Size(49, 24);
+            this.lblStatusConexao.TabIndex = 12;
+            this.lblStatusConexao.Text = "OFF";
+            // 
+            // btnM4mais
+            // 
+            this.btnM4mais.Location = new System.Drawing.Point(189, 492);
+            this.btnM4mais.Name = "btnM4mais";
+            this.btnM4mais.Size = new System.Drawing.Size(34, 23);
+            this.btnM4mais.TabIndex = 30;
+            this.btnM4mais.Text = "+";
+            this.btnM4mais.UseVisualStyleBackColor = true;
+            this.btnM4mais.Click += new System.EventHandler(this.btnM4mais_Click);
+            // 
+            // btnM2menos
+            // 
+            this.btnM2menos.Location = new System.Drawing.Point(156, 353);
+            this.btnM2menos.Name = "btnM2menos";
+            this.btnM2menos.Size = new System.Drawing.Size(34, 23);
+            this.btnM2menos.TabIndex = 29;
+            this.btnM2menos.Text = "-";
+            this.btnM2menos.UseVisualStyleBackColor = true;
+            this.btnM2menos.Click += new System.EventHandler(this.btnM2menos_Click);
+            // 
+            // btnM2mais
+            // 
+            this.btnM2mais.Location = new System.Drawing.Point(189, 353);
+            this.btnM2mais.Name = "btnM2mais";
+            this.btnM2mais.Size = new System.Drawing.Size(34, 23);
+            this.btnM2mais.TabIndex = 28;
+            this.btnM2mais.Text = "+";
+            this.btnM2mais.UseVisualStyleBackColor = true;
+            this.btnM2mais.Click += new System.EventHandler(this.btnM2mais_Click);
+            // 
+            // btnM3menos
+            // 
+            this.btnM3menos.Location = new System.Drawing.Point(156, 422);
+            this.btnM3menos.Name = "btnM3menos";
+            this.btnM3menos.Size = new System.Drawing.Size(34, 23);
+            this.btnM3menos.TabIndex = 27;
+            this.btnM3menos.Text = "-";
+            this.btnM3menos.UseVisualStyleBackColor = true;
+            this.btnM3menos.Click += new System.EventHandler(this.btnM3menos_Click);
+            // 
+            // btnM3mais
+            // 
+            this.btnM3mais.Location = new System.Drawing.Point(189, 422);
+            this.btnM3mais.Name = "btnM3mais";
+            this.btnM3mais.Size = new System.Drawing.Size(34, 23);
+            this.btnM3mais.TabIndex = 26;
+            this.btnM3mais.Text = "+";
+            this.btnM3mais.UseVisualStyleBackColor = true;
+            this.btnM3mais.Click += new System.EventHandler(this.btnM3mais_Click);
+            // 
+            // btnM1menos
+            // 
+            this.btnM1menos.Location = new System.Drawing.Point(156, 282);
+            this.btnM1menos.Name = "btnM1menos";
+            this.btnM1menos.Size = new System.Drawing.Size(34, 23);
+            this.btnM1menos.TabIndex = 25;
+            this.btnM1menos.Text = "-";
+            this.btnM1menos.UseVisualStyleBackColor = true;
+            this.btnM1menos.Click += new System.EventHandler(this.btnM1menos_Click);
+            // 
+            // btnM1mais
+            // 
+            this.btnM1mais.Location = new System.Drawing.Point(189, 282);
+            this.btnM1mais.Name = "btnM1mais";
+            this.btnM1mais.Size = new System.Drawing.Size(34, 23);
+            this.btnM1mais.TabIndex = 24;
+            this.btnM1mais.Text = "+";
+            this.btnM1mais.UseVisualStyleBackColor = true;
+            this.btnM1mais.Click += new System.EventHandler(this.btnM1mais_Click);
+            this.btnM1mais.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnM1mais_MouseUp);
+            // 
+            // btnM4
+            // 
+            this.btnM4.Location = new System.Drawing.Point(229, 467);
+            this.btnM4.Name = "btnM4";
+            this.btnM4.Size = new System.Drawing.Size(41, 48);
+            this.btnM4.TabIndex = 23;
+            this.btnM4.Text = "set";
+            this.btnM4.UseVisualStyleBackColor = true;
+            this.btnM4.Click += new System.EventHandler(this.btnM4_Click);
+            // 
+            // btnM3
+            // 
+            this.btnM3.Location = new System.Drawing.Point(229, 397);
+            this.btnM3.Name = "btnM3";
+            this.btnM3.Size = new System.Drawing.Size(41, 48);
+            this.btnM3.TabIndex = 22;
+            this.btnM3.Text = "set";
+            this.btnM3.UseVisualStyleBackColor = true;
+            this.btnM3.Click += new System.EventHandler(this.btnM3_Click);
+            // 
+            // btnM2
+            // 
+            this.btnM2.Location = new System.Drawing.Point(229, 324);
+            this.btnM2.Name = "btnM2";
+            this.btnM2.Size = new System.Drawing.Size(41, 52);
+            this.btnM2.TabIndex = 21;
+            this.btnM2.Text = "set";
+            this.btnM2.UseVisualStyleBackColor = true;
+            this.btnM2.Click += new System.EventHandler(this.btnM2_Click);
+            // 
+            // btnM1
+            // 
+            this.btnM1.Location = new System.Drawing.Point(229, 253);
+            this.btnM1.Name = "btnM1";
+            this.btnM1.Size = new System.Drawing.Size(41, 52);
+            this.btnM1.TabIndex = 20;
+            this.btnM1.Text = "set";
+            this.btnM1.UseVisualStyleBackColor = true;
+            this.btnM1.Click += new System.EventHandler(this.btnM1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(38, 473);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Motor 4 : (direita)";
+            // 
+            // lblM4
+            // 
+            this.lblM4.Location = new System.Drawing.Point(156, 470);
+            this.lblM4.Name = "lblM4";
+            this.lblM4.Size = new System.Drawing.Size(67, 20);
+            this.lblM4.TabIndex = 18;
+            this.lblM4.Text = "90";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(38, 403);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Motor 3 : (garra)";
+            // 
+            // lblM3
+            // 
+            this.lblM3.Location = new System.Drawing.Point(156, 400);
+            this.lblM3.Name = "lblM3";
+            this.lblM3.Size = new System.Drawing.Size(67, 20);
+            this.lblM3.TabIndex = 16;
+            this.lblM3.Text = "90";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(38, 330);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Motor 2 : (esquerda)";
+            // 
+            // lblM2
+            // 
+            this.lblM2.Location = new System.Drawing.Point(156, 327);
+            this.lblM2.Name = "lblM2";
+            this.lblM2.Size = new System.Drawing.Size(67, 20);
+            this.lblM2.TabIndex = 14;
+            this.lblM2.Text = "90";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(38, 259);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Motor 1 : (base)";
+            // 
+            // lblM1
+            // 
+            this.lblM1.Location = new System.Drawing.Point(156, 256);
+            this.lblM1.Name = "lblM1";
+            this.lblM1.Size = new System.Drawing.Size(67, 20);
+            this.lblM1.TabIndex = 10;
+            this.lblM1.Text = "90";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(278, 37);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 13);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Nível bateria :";
+            // 
+            // lblNivelBateria
+            // 
+            this.lblNivelBateria.AutoSize = true;
+            this.lblNivelBateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNivelBateria.Location = new System.Drawing.Point(358, 32);
+            this.lblNivelBateria.Name = "lblNivelBateria";
+            this.lblNivelBateria.Size = new System.Drawing.Size(114, 24);
+            this.lblNivelBateria.TabIndex = 39;
+            this.lblNivelBateria.Text = "Analisando..";
+            // 
             // textBoxReceber
             // 
             this.textBoxReceber.Enabled = false;
-            this.textBoxReceber.Location = new System.Drawing.Point(12, 80);
+            this.textBoxReceber.Location = new System.Drawing.Point(12, 61);
             this.textBoxReceber.Multiline = true;
             this.textBoxReceber.Name = "textBoxReceber";
-            this.textBoxReceber.Size = new System.Drawing.Size(200, 499);
+            this.textBoxReceber.Size = new System.Drawing.Size(200, 520);
             this.textBoxReceber.TabIndex = 10;
             // 
             // button25
             // 
-            this.button25.Location = new System.Drawing.Point(12, 589);
+            this.button25.Location = new System.Drawing.Point(12, 602);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(200, 29);
             this.button25.TabIndex = 40;
@@ -863,7 +615,7 @@
             // 
             // btnAttBateria
             // 
-            this.btnAttBateria.Location = new System.Drawing.Point(939, 33);
+            this.btnAttBateria.Location = new System.Drawing.Point(232, 32);
             this.btnAttBateria.Name = "btnAttBateria";
             this.btnAttBateria.Size = new System.Drawing.Size(40, 23);
             this.btnAttBateria.TabIndex = 41;
@@ -881,50 +633,95 @@
             this.timerStatusConexao.Interval = 3000;
             this.timerStatusConexao.Tick += new System.EventHandler(this.timerStatusConexao_Tick);
             // 
-            // btnLiberarMotores
+            // pictureBox1
             // 
-            this.btnLiberarMotores.Location = new System.Drawing.Point(696, 26);
-            this.btnLiberarMotores.Name = "btnLiberarMotores";
-            this.btnLiberarMotores.Size = new System.Drawing.Size(70, 44);
-            this.btnLiberarMotores.TabIndex = 42;
-            this.btnLiberarMotores.Text = "Liberar motores";
-            this.btnLiberarMotores.UseVisualStyleBackColor = true;
-            this.btnLiberarMotores.Click += new System.EventHandler(this.btnLiberarMotores_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(41, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(334, 122);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 50;
+            this.pictureBox1.TabStop = false;
             // 
-            // lblLiberarMotores
+            // txt_display_1
             // 
-            this.lblLiberarMotores.AutoSize = true;
-            this.lblLiberarMotores.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLiberarMotores.ForeColor = System.Drawing.Color.Red;
-            this.lblLiberarMotores.Location = new System.Drawing.Point(772, 35);
-            this.lblLiberarMotores.Name = "lblLiberarMotores";
-            this.lblLiberarMotores.Size = new System.Drawing.Size(49, 24);
-            this.lblLiberarMotores.TabIndex = 43;
-            this.lblLiberarMotores.Text = "OFF";
+            this.txt_display_1.BackColor = System.Drawing.Color.White;
+            this.txt_display_1.Location = new System.Drawing.Point(75, 82);
+            this.txt_display_1.Name = "txt_display_1";
+            this.txt_display_1.Size = new System.Drawing.Size(272, 20);
+            this.txt_display_1.TabIndex = 42;
+            // 
+            // btn_display
+            // 
+            this.btn_display.Location = new System.Drawing.Point(41, 159);
+            this.btn_display.Name = "btn_display";
+            this.btn_display.Size = new System.Drawing.Size(119, 32);
+            this.btn_display.TabIndex = 52;
+            this.btn_display.Text = "Alterar texto display";
+            this.btn_display.UseVisualStyleBackColor = true;
+            this.btn_display.Click += new System.EventHandler(this.btn_display_Click);
+            // 
+            // lbl_laser
+            // 
+            this.lbl_laser.AutoSize = true;
+            this.lbl_laser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_laser.ForeColor = System.Drawing.Color.Red;
+            this.lbl_laser.Location = new System.Drawing.Point(944, 37);
+            this.lbl_laser.Name = "lbl_laser";
+            this.lbl_laser.Size = new System.Drawing.Size(49, 24);
+            this.lbl_laser.TabIndex = 43;
+            this.lbl_laser.Text = "OFF";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(874, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 44);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Laser";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(166, 159);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 32);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "Limpar display";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txt_intervalo_angulo
+            // 
+            this.txt_intervalo_angulo.Location = new System.Drawing.Point(161, 223);
+            this.txt_intervalo_angulo.Name = "txt_intervalo_angulo";
+            this.txt_intervalo_angulo.Size = new System.Drawing.Size(48, 20);
+            this.txt_intervalo_angulo.TabIndex = 54;
+            this.txt_intervalo_angulo.Text = "5";
+            this.txt_intervalo_angulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 630);
-            this.Controls.Add(this.btnLiberarMotores);
-            this.Controls.Add(this.lblLiberarMotores);
+            this.ClientSize = new System.Drawing.Size(1125, 653);
+            this.Controls.Add(this.lbl_laser);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAttBateria);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.lblNivelBateria);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxReceber);
-            this.Controls.Add(this.btnBuzzer);
-            this.Controls.Add(this.lblStatusBuzzer);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btConectar);
             this.Controls.Add(this.btnCalibrarMotores);
+            this.Controls.Add(this.lblStatusBuzzer);
+            this.Controls.Add(this.btnBuzzer);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnConexaoRemota);
             this.Controls.Add(this.lblStatusConexao);
-            this.Controls.Add(this.btnPilotoAuto);
-            this.Controls.Add(this.lblStatusAutomatico);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Painel de controle - ROVER - Trabalho final MIC 2016/2";
@@ -934,8 +731,7 @@
             this.menuStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -949,38 +745,21 @@
         private System.Windows.Forms.Button btnConexaoRemota;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnPousar;
-        private System.Windows.Forms.Button btnConfirmaVelocidadeTotal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtVelocidadeTotal;
+        private System.Windows.Forms.Button btn_tras;
+        private System.Windows.Forms.Button btn_frente;
+        private System.Windows.Forms.Button btn_esq;
+        private System.Windows.Forms.Button btn_dir;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem opçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Timer timerCOM;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblStatusConexao;
-        private System.Windows.Forms.Label lblStatusAutomatico;
-        private System.Windows.Forms.Button btnPilotoAuto;
         private System.Windows.Forms.Label lblNivelBateria;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolStripMenuItem fecharToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox lbl_temperatura;
         private System.Windows.Forms.Button btnM4menos;
         private System.Windows.Forms.Button btnM4mais;
         private System.Windows.Forms.Button btnM2menos;
@@ -1010,20 +789,18 @@
         private System.Windows.Forms.Timer timerStatusBateria;
         private System.Windows.Forms.Timer timerStatusConexao;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button btnLiberarMotores;
-        private System.Windows.Forms.Label lblLiberarMotores;
-        private System.Windows.Forms.Button btnM4parar;
-        private System.Windows.Forms.Button btnM3parar;
-        private System.Windows.Forms.Button btnM2parar;
-        private System.Windows.Forms.Button btnM1parar;
-        private System.Windows.Forms.Button btnMparar;
-        private System.Windows.Forms.Button btnMmenos;
-        private System.Windows.Forms.Button btnMmais;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox lbl_veloDC;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_fechar;
+        private System.Windows.Forms.Button btn_abrir;
+        private System.Windows.Forms.Button btn_display;
+        private System.Windows.Forms.TextBox txt_display_1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_laser;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txt_intervalo_angulo;
     }
 }
 

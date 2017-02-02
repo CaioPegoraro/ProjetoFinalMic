@@ -28,3 +28,12 @@ C:\Users\Caio\Desktop\VantPainelDeControle\VantPainelDeControle\obj\Debug\VantPa
 C:\Users\Caio\Desktop\VantPainelDeControle\VantPainelDeControle\obj\Debug\VantPainelDeControle.Form1.resources
 C:\Users\Caio\Desktop\VantPainelDeControle\VantPainelDeControle\obj\Debug\VantPainelDeControle.Properties.Resources.resources
 C:\Users\Caio\Desktop\VantPainelDeControle\VantPainelDeControle\obj\Debug\VantPainelDeControle.csproj.GenerateResource.Cache
+C:\Users\Caio\Caio\UFSCar\Laboratório de microcontroladores\projetoFinal\ProjetoFinalMic.git\trunk\RoverPainelDeControle\VantPainelDeControle\bin\Debug\VantPainelDeControle.exe.config
+C:\Users\Caio\Caio\UFSCar\Laboratório de microcontroladores\projetoFinal\ProjetoFinalMic.git\trunk\RoverPainelDeControle\VantPainelDeControle\obj\Debug\VantPainelDeControle.exe
+C:\Users\Caio\Caio\UFSCar\Laboratório de microcontroladores\projetoFinal\ProjetoFinalMic.git\trunk\RoverPainelDeControle\VantPainelDeControle\obj\Debug\VantPainelDeControle.pdb
+C:\Users\Caio\Caio\UFSCar\Laboratório de microcontroladores\projetoFinal\ProjetoFinalMic.git\trunk\RoverPainelDeControle\VantPainelDeControle\bin\Debug\VantPainelDeControle.exe
+C:\Users\Caio\Caio\UFSCar\Laboratório de microcontroladores\projetoFinal\ProjetoFinalMic.git\trunk\RoverPainelDeControle\VantPainelDeControle\bin\Debug\VantPainelDeControle.pdb
+C:\Users\Caio\Caio\UFSCar\Laboratório de microcontroladores\projetoFinal\ProjetoFinalMic.git\trunk\RoverPainelDeControle\VantPainelDeControle\obj\Debug\VantPainelDeControle.csprojResolveAssemblyReference.cache
+C:\Users\Caio\Caio\UFSCar\Laboratório de microcontroladores\projetoFinal\ProjetoFinalMic.git\trunk\RoverPainelDeControle\VantPainelDeControle\obj\Debug\VantPainelDeControle.Form1.resources
+C:\Users\Caio\Caio\UFSCar\Laboratório de microcontroladores\projetoFinal\ProjetoFinalMic.git\trunk\RoverPainelDeControle\VantPainelDeControle\obj\Debug\VantPainelDeControle.Properties.Resources.resources
+C:\Users\Caio\Caio\UFSCar\Laboratório de microcontroladores\projetoFinal\ProjetoFinalMic.git\trunk\RoverPainelDeControle\VantPainelDeControle\obj\Debug\VantPainelDeControle.csproj.GenerateResource.Cache
