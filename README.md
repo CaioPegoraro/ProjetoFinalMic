@@ -18,23 +18,17 @@ Havera um receptor no veículo para troca de mensagens e dados.
 O "rover" terá sensores de leitura ambiente (luminosidade, ultrasom, etc), os dados serão enviados para a central e exibidos em uma tela de comando, pelos quais será possível controlar a movimentação e outras ações.
 Adicionalmente espera-se equipar o veículo com uma camera capaz de enviar fotos remotamente.
 
-== LISTA DE TAREFAS -> Semana do dia 30/01 ==
-- Montar o projeto do painel de controle;
-- Sensor de temperatura funcionou corretamente;
-- Sensor de distância ultrasom funcionou mas não fez a leitura corretamente;
-- Escrever o documento do trabalho;
-   * Descrever os instrumentos utilizados (Arduinos, chave (liga/desl), motores DC (rodinhas), Motor dos braços, ponte H;
-   * Descrever os componentes utilizando uma imagem do Rover;
-   * Objetivo;
-   * Funcionamento;
-   * Testar novamente o sensor ultrasom;
 
- == INTRODUÇÃO == 
+1 - INTRODUÇÃO
+
+  A proposta foi a construção de um "Rover" controlado remotamente utilizando um microcontrolador de baixo custo com foco na aplicação em sistemas de detecção de dados. A execução envolveu uma série de conhecimentos multidisciplinares (entre disciplinas de computação, física e engenharia).
+  O projeto foi inteiramente estruturado em cima do microcontrolador Arduino, isto é, todo controle de execução e comunicação é executado por um hardware arduino (menos no caso do cliente que executa em um PC). Ao todo foram utilizadas três Arduinos: dois do tipo "Arduino Uno"(um no emissor primário e outro como receptor secundário), o outro é do tipo "Arduino Mega"(funcionando como receptor secundário) como mostra a Figura 1 abaixo.
+  
 ![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/arquitetura_comunicacao.PNG)
  
- Figura 1: Arquitetura do sistema de hardware do VANT.
+                   Figura 1: Arquitetura do sistema de hardware do VANT.
  
-De acordo com a Figura 1 temos a arquitetura geral do projeto, os itens enumerados cor-
+  De acordo com a Figura 1 temos a arquitetura geral do projeto, os itens enumerados cor-
 respondem a cada dispositivo encarregado de uma tarefa especíﬁca:
 
 (1) Painel de controle: Um cliente escrito em C executando em um ambiente "Windows", pode
@@ -52,6 +46,9 @@ aceleração dos motores e posição dos braços mecânicos.
 
 
 ----------Inserir foto dos motores e dos arduínos---------------
+
+  A programação nas placas é a mesma (utilizando a linguagem C) e não há diferenças significativas de hardware (considerando o propósito de uso nesse projeto, no geral o MEGA é superior), foram testadas duas alternativas antes de definir esse modelo final: a primeira era utilizar um chip Attiny85 para função de comunicação (o chip daria um processamento dedicado a recepção de dados), como o chip é pequeno seria possível economizar espaço e peso, mas houve incompatibilidade com o sensor de rádio frequência em conjunto com a comunicação IC2 (futuramente será reavaliado essa solução); a segunda tentativa foi utilizar um "Arduino Due", principalmente pela característica de processamento paralelo, na prática teriam várias rotinas executando simultaneamente para garantir as tarefas de tempo real, mas novamente houve incompatibilidade com algumas bibliotecas, o que impossibilitou o uso.
+
 
 
 
