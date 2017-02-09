@@ -11,7 +11,10 @@ https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/receptor_
 - Adicionado ligações do receptor primário
 
 == Receptor secundário
-https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/receptor_secundario.PNG
+https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/receptor_secundario2.png
 
-Tarefas:
-- Adicionar esquemático inicial do receptor secundário c/ a ligação do display LCD e a ligação da comunicação serial
+(01/02/2017)
+- Adicionado esquemático inicial do receptor secundário
+
+(09/02/2017)
+- Esquemático do receptor secundário atualizado
