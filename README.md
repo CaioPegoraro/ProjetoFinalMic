@@ -76,7 +76,7 @@ A lista dos componentes utilizados pode ser vista a seguir:
 9. Bateria: Lipo Zippy 2200mah 3s 40/50c 11.1v;
 10. Buzzer: Oscilador interno;
 11. Bateria: 9v (alimentação do circuito no VANT);
-12. ensor de Temperatura:DS18B20;
+12. Sensor de Temperatura: DS18B20;
 13. 4x:Rodinhas;
 14. Componentes gerais: Resistores, LED’s, estanho, placa pcb,tubos termoretráteis, pinos e conectores, fios e chaves.
 
