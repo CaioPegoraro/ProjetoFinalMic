@@ -91,10 +91,11 @@ void loop() {
     //dessa forma não seria necessário adicionar mais um componente na estrutura da mensagem
     //permanecendo assim nos 2 bytes (ou no caso 1 inteiro).
 
-    //se o valor for um comando composto, aguarda uma resposta do vant:
+    //se o valor for um comando composto, aguarda uma resposta do rover:
     if (dados.cmd >= 125) {
       //Serial.println("");
       //Serial.println("Aguardando resposta \n");
+      
       radio.startListening();
       for (int i = 0; i < 500; i++) {
         done = radio.available();
@@ -124,6 +125,9 @@ void loop() {
           case 126: //leitura valor da bateria
             Serial.println(dados.cmd * 100000 + dados.valor);
             break;
+
+          case 127: //leitura de temperatura
+          Serial.println(dados.cmd * 100000 + dados.valor);
         }
       }
       else {

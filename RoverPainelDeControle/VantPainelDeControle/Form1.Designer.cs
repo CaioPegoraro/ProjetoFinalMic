@@ -92,6 +92,7 @@
             this.timerStatusConexao = new System.Windows.Forms.Timer(this.components);
             this.lbl_laser = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btn_temperatura = new System.Windows.Forms.Button();
             this.btnCalibrarMotores.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -126,18 +127,16 @@
             this.btnCalibrarMotores.Controls.Add(this.btn_frente);
             this.btnCalibrarMotores.Controls.Add(this.btn_esq);
             this.btnCalibrarMotores.Controls.Add(this.btn_dir);
-            this.btnCalibrarMotores.Controls.Add(this.label8);
-            this.btnCalibrarMotores.Controls.Add(this.lbl_temperatura);
-            this.btnCalibrarMotores.Location = new System.Drawing.Point(232, 89);
+            this.btnCalibrarMotores.Location = new System.Drawing.Point(232, 205);
             this.btnCalibrarMotores.Name = "btnCalibrarMotores";
-            this.btnCalibrarMotores.Size = new System.Drawing.Size(446, 542);
+            this.btnCalibrarMotores.Size = new System.Drawing.Size(446, 426);
             this.btnCalibrarMotores.TabIndex = 4;
             this.btnCalibrarMotores.TabStop = false;
             this.btnCalibrarMotores.Text = "Controle de direção";
             // 
             // lbl_veloDC
             // 
-            this.lbl_veloDC.Location = new System.Drawing.Point(202, 259);
+            this.lbl_veloDC.Location = new System.Drawing.Point(202, 182);
             this.lbl_veloDC.Name = "lbl_veloDC";
             this.lbl_veloDC.Size = new System.Drawing.Size(54, 20);
             this.lbl_veloDC.TabIndex = 51;
@@ -146,7 +145,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(36, 477);
+            this.button10.Location = new System.Drawing.Point(36, 384);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(387, 29);
             this.button10.TabIndex = 42;
@@ -157,7 +156,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(199, 442);
+            this.label3.Location = new System.Drawing.Point(199, 359);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 9;
@@ -166,7 +165,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(182, 85);
+            this.label2.Location = new System.Drawing.Point(182, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 2;
@@ -175,19 +174,20 @@
             // btn_tras
             // 
             this.btn_tras.Image = global::VantPainelDeControle.Properties.Resources.setaTraN;
-            this.btn_tras.Location = new System.Drawing.Point(170, 330);
+            this.btn_tras.Location = new System.Drawing.Point(170, 242);
             this.btn_tras.Name = "btn_tras";
             this.btn_tras.Size = new System.Drawing.Size(121, 95);
             this.btn_tras.TabIndex = 7;
             this.btn_tras.Text = "tras";
             this.btn_tras.UseVisualStyleBackColor = true;
+            this.btn_tras.Click += new System.EventHandler(this.btn_tras_Click);
             this.btn_tras.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_tras_MouseDown);
             this.btn_tras.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_tras_MouseUp);
             // 
             // btn_frente
             // 
             this.btn_frente.Image = global::VantPainelDeControle.Properties.Resources.setaCimN;
-            this.btn_frente.Location = new System.Drawing.Point(170, 122);
+            this.btn_frente.Location = new System.Drawing.Point(170, 51);
             this.btn_frente.Name = "btn_frente";
             this.btn_frente.Size = new System.Drawing.Size(121, 96);
             this.btn_frente.TabIndex = 6;
@@ -199,7 +199,7 @@
             // btn_esq
             // 
             this.btn_esq.Image = global::VantPainelDeControle.Properties.Resources.setaEsqN;
-            this.btn_esq.Location = new System.Drawing.Point(36, 226);
+            this.btn_esq.Location = new System.Drawing.Point(36, 149);
             this.btn_esq.Name = "btn_esq";
             this.btn_esq.Size = new System.Drawing.Size(121, 85);
             this.btn_esq.TabIndex = 5;
@@ -212,7 +212,7 @@
             // btn_dir
             // 
             this.btn_dir.Image = global::VantPainelDeControle.Properties.Resources.setaDirN;
-            this.btn_dir.Location = new System.Drawing.Point(302, 226);
+            this.btn_dir.Location = new System.Drawing.Point(302, 149);
             this.btn_dir.Name = "btn_dir";
             this.btn_dir.Size = new System.Drawing.Size(121, 85);
             this.btn_dir.TabIndex = 4;
@@ -224,7 +224,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 34);
+            this.label8.Location = new System.Drawing.Point(261, 125);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 37;
@@ -233,7 +233,7 @@
             // 
             // lbl_temperatura
             // 
-            this.lbl_temperatura.Location = new System.Drawing.Point(97, 31);
+            this.lbl_temperatura.Location = new System.Drawing.Point(345, 122);
             this.lbl_temperatura.Name = "lbl_temperatura";
             this.lbl_temperatura.ReadOnly = true;
             this.lbl_temperatura.Size = new System.Drawing.Size(67, 20);
@@ -241,7 +241,7 @@
             // 
             // btnConexaoRemota
             // 
-            this.btnConexaoRemota.Location = new System.Drawing.Point(563, 28);
+            this.btnConexaoRemota.Location = new System.Drawing.Point(546, 34);
             this.btnConexaoRemota.Name = "btnConexaoRemota";
             this.btnConexaoRemota.Size = new System.Drawing.Size(64, 44);
             this.btnConexaoRemota.TabIndex = 4;
@@ -318,16 +318,16 @@
             this.groupBox2.Controls.Add(this.lblM2);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.lblM1);
-            this.groupBox2.Location = new System.Drawing.Point(699, 89);
+            this.groupBox2.Location = new System.Drawing.Point(699, 41);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(414, 542);
+            this.groupBox2.Size = new System.Drawing.Size(414, 590);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sensores";
             // 
             // txt_intervalo_angulo
             // 
-            this.txt_intervalo_angulo.Location = new System.Drawing.Point(161, 223);
+            this.txt_intervalo_angulo.Location = new System.Drawing.Point(177, 228);
             this.txt_intervalo_angulo.Name = "txt_intervalo_angulo";
             this.txt_intervalo_angulo.Size = new System.Drawing.Size(48, 20);
             this.txt_intervalo_angulo.TabIndex = 54;
@@ -374,7 +374,7 @@
             // 
             // btn_fechar
             // 
-            this.btn_fechar.Location = new System.Drawing.Point(316, 429);
+            this.btn_fechar.Location = new System.Drawing.Point(318, 461);
             this.btn_fechar.Name = "btn_fechar";
             this.btn_fechar.Size = new System.Drawing.Size(75, 23);
             this.btn_fechar.TabIndex = 49;
@@ -384,7 +384,7 @@
             // 
             // btn_abrir
             // 
-            this.btn_abrir.Location = new System.Drawing.Point(316, 400);
+            this.btn_abrir.Location = new System.Drawing.Point(318, 432);
             this.btn_abrir.Name = "btn_abrir";
             this.btn_abrir.Size = new System.Drawing.Size(75, 23);
             this.btn_abrir.TabIndex = 42;
@@ -395,7 +395,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 226);
+            this.label1.Location = new System.Drawing.Point(40, 231);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 13);
             this.label1.TabIndex = 48;
@@ -403,7 +403,7 @@
             // 
             // btnM4menos
             // 
-            this.btnM4menos.Location = new System.Drawing.Point(156, 492);
+            this.btnM4menos.Location = new System.Drawing.Point(158, 524);
             this.btnM4menos.Name = "btnM4menos";
             this.btnM4menos.Size = new System.Drawing.Size(34, 23);
             this.btnM4menos.TabIndex = 31;
@@ -413,7 +413,7 @@
             // 
             // btnM4mais
             // 
-            this.btnM4mais.Location = new System.Drawing.Point(189, 492);
+            this.btnM4mais.Location = new System.Drawing.Point(191, 524);
             this.btnM4mais.Name = "btnM4mais";
             this.btnM4mais.Size = new System.Drawing.Size(34, 23);
             this.btnM4mais.TabIndex = 30;
@@ -423,7 +423,7 @@
             // 
             // btnM2menos
             // 
-            this.btnM2menos.Location = new System.Drawing.Point(156, 353);
+            this.btnM2menos.Location = new System.Drawing.Point(158, 385);
             this.btnM2menos.Name = "btnM2menos";
             this.btnM2menos.Size = new System.Drawing.Size(34, 23);
             this.btnM2menos.TabIndex = 29;
@@ -433,7 +433,7 @@
             // 
             // btnM2mais
             // 
-            this.btnM2mais.Location = new System.Drawing.Point(189, 353);
+            this.btnM2mais.Location = new System.Drawing.Point(191, 385);
             this.btnM2mais.Name = "btnM2mais";
             this.btnM2mais.Size = new System.Drawing.Size(34, 23);
             this.btnM2mais.TabIndex = 28;
@@ -443,7 +443,7 @@
             // 
             // btnM3menos
             // 
-            this.btnM3menos.Location = new System.Drawing.Point(156, 422);
+            this.btnM3menos.Location = new System.Drawing.Point(158, 454);
             this.btnM3menos.Name = "btnM3menos";
             this.btnM3menos.Size = new System.Drawing.Size(34, 23);
             this.btnM3menos.TabIndex = 27;
@@ -453,7 +453,7 @@
             // 
             // btnM3mais
             // 
-            this.btnM3mais.Location = new System.Drawing.Point(189, 422);
+            this.btnM3mais.Location = new System.Drawing.Point(191, 454);
             this.btnM3mais.Name = "btnM3mais";
             this.btnM3mais.Size = new System.Drawing.Size(34, 23);
             this.btnM3mais.TabIndex = 26;
@@ -463,7 +463,7 @@
             // 
             // btnM1menos
             // 
-            this.btnM1menos.Location = new System.Drawing.Point(156, 282);
+            this.btnM1menos.Location = new System.Drawing.Point(158, 314);
             this.btnM1menos.Name = "btnM1menos";
             this.btnM1menos.Size = new System.Drawing.Size(34, 23);
             this.btnM1menos.TabIndex = 25;
@@ -473,7 +473,7 @@
             // 
             // btnM1mais
             // 
-            this.btnM1mais.Location = new System.Drawing.Point(189, 282);
+            this.btnM1mais.Location = new System.Drawing.Point(191, 314);
             this.btnM1mais.Name = "btnM1mais";
             this.btnM1mais.Size = new System.Drawing.Size(34, 23);
             this.btnM1mais.TabIndex = 24;
@@ -484,7 +484,7 @@
             // 
             // btnM4
             // 
-            this.btnM4.Location = new System.Drawing.Point(229, 467);
+            this.btnM4.Location = new System.Drawing.Point(231, 499);
             this.btnM4.Name = "btnM4";
             this.btnM4.Size = new System.Drawing.Size(41, 48);
             this.btnM4.TabIndex = 23;
@@ -494,7 +494,7 @@
             // 
             // btnM3
             // 
-            this.btnM3.Location = new System.Drawing.Point(229, 397);
+            this.btnM3.Location = new System.Drawing.Point(231, 429);
             this.btnM3.Name = "btnM3";
             this.btnM3.Size = new System.Drawing.Size(41, 48);
             this.btnM3.TabIndex = 22;
@@ -504,7 +504,7 @@
             // 
             // btnM2
             // 
-            this.btnM2.Location = new System.Drawing.Point(229, 324);
+            this.btnM2.Location = new System.Drawing.Point(231, 356);
             this.btnM2.Name = "btnM2";
             this.btnM2.Size = new System.Drawing.Size(41, 52);
             this.btnM2.TabIndex = 21;
@@ -514,7 +514,7 @@
             // 
             // btnM1
             // 
-            this.btnM1.Location = new System.Drawing.Point(229, 253);
+            this.btnM1.Location = new System.Drawing.Point(231, 285);
             this.btnM1.Name = "btnM1";
             this.btnM1.Size = new System.Drawing.Size(41, 52);
             this.btnM1.TabIndex = 20;
@@ -525,7 +525,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 473);
+            this.label7.Location = new System.Drawing.Point(40, 505);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 13);
             this.label7.TabIndex = 19;
@@ -533,7 +533,7 @@
             // 
             // lblM4
             // 
-            this.lblM4.Location = new System.Drawing.Point(156, 470);
+            this.lblM4.Location = new System.Drawing.Point(158, 502);
             this.lblM4.Name = "lblM4";
             this.lblM4.Size = new System.Drawing.Size(67, 20);
             this.lblM4.TabIndex = 18;
@@ -542,7 +542,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 403);
+            this.label6.Location = new System.Drawing.Point(40, 435);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 13);
             this.label6.TabIndex = 17;
@@ -550,7 +550,7 @@
             // 
             // lblM3
             // 
-            this.lblM3.Location = new System.Drawing.Point(156, 400);
+            this.lblM3.Location = new System.Drawing.Point(158, 432);
             this.lblM3.Name = "lblM3";
             this.lblM3.Size = new System.Drawing.Size(67, 20);
             this.lblM3.TabIndex = 16;
@@ -559,7 +559,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 330);
+            this.label5.Location = new System.Drawing.Point(40, 362);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 15;
@@ -567,7 +567,7 @@
             // 
             // lblM2
             // 
-            this.lblM2.Location = new System.Drawing.Point(156, 327);
+            this.lblM2.Location = new System.Drawing.Point(158, 359);
             this.lblM2.Name = "lblM2";
             this.lblM2.Size = new System.Drawing.Size(67, 20);
             this.lblM2.TabIndex = 14;
@@ -576,7 +576,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 259);
+            this.label4.Location = new System.Drawing.Point(40, 291);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 13;
@@ -584,7 +584,7 @@
             // 
             // lblM1
             // 
-            this.lblM1.Location = new System.Drawing.Point(156, 256);
+            this.lblM1.Location = new System.Drawing.Point(158, 288);
             this.lblM1.Name = "lblM1";
             this.lblM1.Size = new System.Drawing.Size(67, 20);
             this.lblM1.TabIndex = 10;
@@ -592,7 +592,7 @@
             // 
             // btnBuzzer
             // 
-            this.btnBuzzer.Location = new System.Drawing.Point(726, 28);
+            this.btnBuzzer.Location = new System.Drawing.Point(546, 89);
             this.btnBuzzer.Name = "btnBuzzer";
             this.btnBuzzer.Size = new System.Drawing.Size(64, 44);
             this.btnBuzzer.TabIndex = 13;
@@ -605,7 +605,7 @@
             this.lblStatusBuzzer.AutoSize = true;
             this.lblStatusBuzzer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusBuzzer.ForeColor = System.Drawing.Color.Red;
-            this.lblStatusBuzzer.Location = new System.Drawing.Point(796, 37);
+            this.lblStatusBuzzer.Location = new System.Drawing.Point(616, 98);
             this.lblStatusBuzzer.Name = "lblStatusBuzzer";
             this.lblStatusBuzzer.Size = new System.Drawing.Size(49, 24);
             this.lblStatusBuzzer.TabIndex = 14;
@@ -616,7 +616,7 @@
             this.lblStatusConexao.AutoSize = true;
             this.lblStatusConexao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusConexao.ForeColor = System.Drawing.Color.Red;
-            this.lblStatusConexao.Location = new System.Drawing.Point(635, 36);
+            this.lblStatusConexao.Location = new System.Drawing.Point(618, 42);
             this.lblStatusConexao.Name = "lblStatusConexao";
             this.lblStatusConexao.Size = new System.Drawing.Size(49, 24);
             this.lblStatusConexao.TabIndex = 12;
@@ -625,7 +625,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(278, 37);
+            this.label9.Location = new System.Drawing.Point(261, 53);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 13);
             this.label9.TabIndex = 38;
@@ -635,7 +635,7 @@
             // 
             this.lblNivelBateria.AutoSize = true;
             this.lblNivelBateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNivelBateria.Location = new System.Drawing.Point(358, 32);
+            this.lblNivelBateria.Location = new System.Drawing.Point(341, 48);
             this.lblNivelBateria.Name = "lblNivelBateria";
             this.lblNivelBateria.Size = new System.Drawing.Size(114, 24);
             this.lblNivelBateria.TabIndex = 39;
@@ -662,11 +662,11 @@
             // 
             // btnAttBateria
             // 
-            this.btnAttBateria.Location = new System.Drawing.Point(232, 32);
+            this.btnAttBateria.Location = new System.Drawing.Point(345, 75);
             this.btnAttBateria.Name = "btnAttBateria";
-            this.btnAttBateria.Size = new System.Drawing.Size(40, 23);
+            this.btnAttBateria.Size = new System.Drawing.Size(67, 26);
             this.btnAttBateria.TabIndex = 41;
-            this.btnAttBateria.Text = "Att";
+            this.btnAttBateria.Text = "atualizar";
             this.btnAttBateria.UseVisualStyleBackColor = true;
             this.btnAttBateria.Click += new System.EventHandler(this.btnAttBateria_Click);
             // 
@@ -685,7 +685,7 @@
             this.lbl_laser.AutoSize = true;
             this.lbl_laser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_laser.ForeColor = System.Drawing.Color.Red;
-            this.lbl_laser.Location = new System.Drawing.Point(944, 37);
+            this.lbl_laser.Location = new System.Drawing.Point(616, 158);
             this.lbl_laser.Name = "lbl_laser";
             this.lbl_laser.Size = new System.Drawing.Size(49, 24);
             this.lbl_laser.TabIndex = 43;
@@ -693,7 +693,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(874, 28);
+            this.button1.Location = new System.Drawing.Point(546, 149);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(64, 44);
             this.button1.TabIndex = 42;
@@ -701,11 +701,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btn_temperatura
+            // 
+            this.btn_temperatura.Location = new System.Drawing.Point(345, 148);
+            this.btn_temperatura.Name = "btn_temperatura";
+            this.btn_temperatura.Size = new System.Drawing.Size(67, 23);
+            this.btn_temperatura.TabIndex = 44;
+            this.btn_temperatura.Text = "atualizar";
+            this.btn_temperatura.UseVisualStyleBackColor = true;
+            this.btn_temperatura.Click += new System.EventHandler(this.btn_temperatura_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 653);
+            this.Controls.Add(this.btn_temperatura);
             this.Controls.Add(this.lbl_laser);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAttBateria);
@@ -715,7 +726,9 @@
             this.Controls.Add(this.textBoxReceber);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btConectar);
+            this.Controls.Add(this.lbl_temperatura);
             this.Controls.Add(this.btnCalibrarMotores);
             this.Controls.Add(this.lblStatusBuzzer);
             this.Controls.Add(this.btnBuzzer);
@@ -801,6 +814,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txt_intervalo_angulo;
+        private System.Windows.Forms.Button btn_temperatura;
     }
 }
 

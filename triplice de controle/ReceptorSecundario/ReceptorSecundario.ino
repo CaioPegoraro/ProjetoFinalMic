@@ -37,8 +37,6 @@ Servo servo1;
 Servo servo2;
 Servo servo3;
 Servo servo4;
-
-
 //=== FIM Variáveis de controle servo motores ===
 
 //=== Variaveis Auxiliares ==
@@ -51,11 +49,9 @@ int pino_Laser = 9;
 int flag_dc = 0;
 int flag_servo = 0;
 int flag_led = 0;
-int flag_tmp = 0; //sensor temperatura
 int flag_laser = 0;
 
 //=== FIM Variaveis Auxiliares ==
-
 
 //=== FUNCOES AUXILIARES ===//
 
@@ -116,6 +112,10 @@ void motor_dc_Stop() {
 //a função foi previamente configurada no setup para esse tipo
 //de tratamento.
 
+//== Funcoes de comunicacao IC2 ==//
+
+//Quando o mestre tiver dados para serem recebidos pelo slave (receptor secundario),
+//a funcao eh chamada
 void receiveEvent(int howMany) {
   data = "";
   while (Wire.available()) { //enqnto estiver disponivel bytes
@@ -124,7 +124,7 @@ void receiveEvent(int howMany) {
   int valor_data = data.toInt();
   Serial.println(valor_data);
   if ((valor_data == 1700) || (valor_data == 1600)) {
-    dados.cmd = valor_data/100;
+    dados.cmd = valor_data / 100;
     dados.valor = 0;
   }
   else {
@@ -147,6 +147,8 @@ void receiveEvent(int howMany) {
   Serial.println(dados.cmd);
   Serial.println(dados.valor);
 }
+
+//== FIM Funcoes de comunicacao IC2 ==//
 
 //=== FIM FUNCOES AUXILIARES ==//
 
@@ -189,7 +191,6 @@ void loop() {
     int flag_servo = 0;
     int flag_led = 0;
 
-    int flag_tmp = 0; //sensor temperatura
     int flag_laser = 0;
   */
 

@@ -195,8 +195,25 @@ namespace VantPainelDeControle
                     int bat_int = (int)porcent_bat;
                     lblNivelBateria.Text = bat_int.ToString() + "%";
                     //Console.WriteLine(porcent_bat);
+                    break;
+
+                case 127:
+                    //Leitura da temperatura
+                    int inteiro = valor / 100;
+
+                    float temp = valor;
+                    temp = temp / 100;
+                    temp = temp - inteiro;
+                    temp = temp * 100;
+
+                    int real = (int)temp;
+
+                    lbl_temperatura.Text = inteiro.ToString();
+                    lbl_temperatura.Text += ",";
+                    lbl_temperatura.Text += real.ToString();
 
                     break;
+
             }
 
         }
@@ -507,7 +524,7 @@ namespace VantPainelDeControle
             int numero;
             int.TryParse(lblM2.Text, out numero);
             lblM2.Text = (numero - Convert.ToInt16(txt_intervalo_angulo.Text)).ToString();
-
+        
 
             //                        cmd  valor
             byte temp = byte.Parse(lblM2.Text);
@@ -1019,6 +1036,27 @@ namespace VantPainelDeControle
              txt_display_1.Clear();
 
 
+        }
+
+        private void btn_tras_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_temperatura_Click(object sender, EventArgs e)
+        {
+            //solicita temperatura atual do sensor
+
+            byte[] data = new byte[] { 127, 0 };
+
+            if (serialPort1.IsOpen == true)
+            {//porta está aberta
+                serialPort1.Write(data, 0, 2); //escreve o vetor de 2 bytes na saida serial
+
+            }
+            textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
+            textBoxReceber.AppendText("cmd: 0127 \n");
+            textBoxReceber.AppendText("valor: 0000 \n\n");
         }
     }
 }

@@ -8,6 +8,7 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 #include "pacote.h"
+#include "OneWire.h"
 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
@@ -36,6 +37,73 @@ int pin_buzzer = 10;
 int status_buzzer = 0;//inicialmente desligado
 unsigned long previousMillis = 0;
 const long interval = 700;
+
+//=== Variáveis de controle do sensor de temperatura ===//
+byte i;
+byte present = 0;
+byte type_s;
+byte data_tmp[12];
+byte addr[8];
+float celsius, fahrenheit;
+OneWire  sensor_temp(6); //sensor de temperatura na porta pwm 8
+float temp_atual = 0;
+
+//=== FIM Variáveis de controle do sensor de temperatura ===//
+
+//== Funcao de operacao do sensor de temperatura ==//
+
+void ler_temperatura() {
+  if ( !sensor_temp.search(addr)) {
+    sensor_temp.reset_search();
+    delay(250);
+    return;
+  }
+
+  sensor_temp.reset();
+  sensor_temp.select(addr);
+  sensor_temp.write(0x44);
+
+  delay(1000);
+
+  present = sensor_temp.reset();
+  sensor_temp.select(addr);
+  sensor_temp.write(0xBE);
+
+
+  for ( i = 0; i < 9; i++) {
+    data_tmp[i] = sensor_temp.read();
+    //Serial.print(data[i], HEX);
+    //Serial.print(" ");
+  }
+
+  //converte o dado para temperatura
+  int16_t raw = (data_tmp[1] << 8) | data_tmp[0];
+  if (type_s) {
+    raw = raw << 3;
+    if (data_tmp[7] == 0x10) {
+      raw = (raw & 0xFFF0) + 12 - data_tmp[6];
+    }
+  } else {
+    byte cfg = (data_tmp[4] & 0x60);
+    if (cfg == 0x00) raw = raw & ~7;
+    else if (cfg == 0x20) raw = raw & ~3;
+    else if (cfg == 0x40) raw = raw & ~1;
+  }
+
+  celsius = (float)raw / 16.0;
+  fahrenheit = celsius * 1.8 + 32.0;
+  /*
+    Serial.print("  Temperature = ");
+    Serial.print(celsius);
+    Serial.print(" Celsius, ");
+    Serial.print(fahrenheit);
+    Serial.println(" Fahrenheit");
+  */
+
+  //atualiza o valor da temperatura atual.
+  temp_atual = celsius;
+}
+//== FIM Funcao de operacao do sensor de temperatura ==//
 
 //controle do lcd
 int flag_lcd = 0;
@@ -126,7 +194,6 @@ void enviaIC2() {
   Wire.endTransmission();
 }
 
-
 void loop()
 {
   if (status_buzzer == 1) {
@@ -150,7 +217,7 @@ void loop()
       lcd.setCursor(0, 1);
       for (int i = 0; i < 16; i++)
         lcd.print(" ");
-        
+
       delay(1000);
       lcd.setBacklight(HIGH);
       coluna = 0;
@@ -160,12 +227,11 @@ void loop()
       char c = dados.valor - 32;
       lcd.setCursor(coluna, linha);
 
-      if(dados.valor!=32)//espaço em branco, ignora porque ja vai pular para a prox coluna dps
+      if (dados.valor != 32) //espaço em branco, ignora porque ja vai pular para a prox coluna dps
         lcd.print(c);
-      else
-        if(coluna==0)
-          coluna--;
-          
+      else if (coluna == 0)
+        coluna--;
+
       //lcd.print(dados.valor);
       coluna++;
       if (coluna == 16) {
@@ -265,11 +331,18 @@ void loop()
           break;
 
         case 126: //Ler carga da bateria
-          sensorValue = analogRead(A0);
-          float voltage = sensorValue * (5.0 / 1023.0);
-          voltage = voltage * 100; //ajustar casas decimais para emular um inteiro
-          int volt_tmp = voltage;
-          enviaMsg(126, volt_tmp);
+          /*sensorValue = analogRead(A0);
+            float voltage = sensorValue * (5.0 / 1023.0);
+            voltage = voltage * 100; //ajustar casas decimais para emular um inteiro
+            int volt_tmp = voltage;
+            enviaMsg(126, volt_tmp);
+          */
+          break;
+
+        case 127: //leiutra da temperatura
+          ler_temperatura();
+          enviaMsg(127, temp_atual*100);
+          Serial.println(temp_atual);
           break;
       }
     }
