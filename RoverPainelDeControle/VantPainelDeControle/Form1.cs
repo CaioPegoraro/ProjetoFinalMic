@@ -1015,7 +1015,10 @@ namespace VantPainelDeControle
                 textBoxReceber.AppendText("\n\n == Comando enviado >> \n");
                 textBoxReceber.AppendText("cmd: 0020 \n");
                 textBoxReceber.AppendText("valor: 0000 \n\n");
-            
+
+             txt_display_1.Clear();
+
+
         }
     }
 }

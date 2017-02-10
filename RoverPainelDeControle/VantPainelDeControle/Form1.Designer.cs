@@ -41,6 +41,8 @@
             this.btn_frente = new System.Windows.Forms.Button();
             this.btn_esq = new System.Windows.Forms.Button();
             this.btn_dir = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_temperatura = new System.Windows.Forms.TextBox();
             this.btnConexaoRemota = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,15 +51,15 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timerCOM = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_intervalo_angulo = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btn_display = new System.Windows.Forms.Button();
+            this.txt_display_1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_fechar = new System.Windows.Forms.Button();
             this.btn_abrir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnBuzzer = new System.Windows.Forms.Button();
-            this.lblStatusBuzzer = new System.Windows.Forms.Label();
-            this.lbl_temperatura = new System.Windows.Forms.TextBox();
             this.btnM4menos = new System.Windows.Forms.Button();
-            this.lblStatusConexao = new System.Windows.Forms.Label();
             this.btnM4mais = new System.Windows.Forms.Button();
             this.btnM2menos = new System.Windows.Forms.Button();
             this.btnM2mais = new System.Windows.Forms.Button();
@@ -77,6 +79,9 @@
             this.lblM2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblM1 = new System.Windows.Forms.TextBox();
+            this.btnBuzzer = new System.Windows.Forms.Button();
+            this.lblStatusBuzzer = new System.Windows.Forms.Label();
+            this.lblStatusConexao = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblNivelBateria = new System.Windows.Forms.Label();
             this.textBoxReceber = new System.Windows.Forms.TextBox();
@@ -85,13 +90,8 @@
             this.btnAttBateria = new System.Windows.Forms.Button();
             this.timerStatusBateria = new System.Windows.Forms.Timer(this.components);
             this.timerStatusConexao = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_display_1 = new System.Windows.Forms.TextBox();
-            this.btn_display = new System.Windows.Forms.Button();
             this.lbl_laser = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txt_intervalo_angulo = new System.Windows.Forms.TextBox();
             this.btnCalibrarMotores.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -141,7 +141,7 @@
             this.lbl_veloDC.Name = "lbl_veloDC";
             this.lbl_veloDC.Size = new System.Drawing.Size(54, 20);
             this.lbl_veloDC.TabIndex = 51;
-            this.lbl_veloDC.Text = "120";
+            this.lbl_veloDC.Text = "150";
             this.lbl_veloDC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button10
@@ -220,6 +220,24 @@
             this.btn_dir.UseVisualStyleBackColor = true;
             this.btn_dir.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_dir_MouseDown);
             this.btn_dir.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_dir_MouseUp);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 34);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Temperatura:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // lbl_temperatura
+            // 
+            this.lbl_temperatura.Location = new System.Drawing.Point(97, 31);
+            this.lbl_temperatura.Name = "lbl_temperatura";
+            this.lbl_temperatura.ReadOnly = true;
+            this.lbl_temperatura.Size = new System.Drawing.Size(67, 20);
+            this.lbl_temperatura.TabIndex = 36;
             // 
             // btnConexaoRemota
             // 
@@ -307,6 +325,53 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sensores";
             // 
+            // txt_intervalo_angulo
+            // 
+            this.txt_intervalo_angulo.Location = new System.Drawing.Point(161, 223);
+            this.txt_intervalo_angulo.Name = "txt_intervalo_angulo";
+            this.txt_intervalo_angulo.Size = new System.Drawing.Size(48, 20);
+            this.txt_intervalo_angulo.TabIndex = 54;
+            this.txt_intervalo_angulo.Text = "5";
+            this.txt_intervalo_angulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(166, 159);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 32);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "Limpar display";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btn_display
+            // 
+            this.btn_display.Location = new System.Drawing.Point(41, 159);
+            this.btn_display.Name = "btn_display";
+            this.btn_display.Size = new System.Drawing.Size(119, 32);
+            this.btn_display.TabIndex = 52;
+            this.btn_display.Text = "Alterar texto display";
+            this.btn_display.UseVisualStyleBackColor = true;
+            this.btn_display.Click += new System.EventHandler(this.btn_display_Click);
+            // 
+            // txt_display_1
+            // 
+            this.txt_display_1.BackColor = System.Drawing.Color.White;
+            this.txt_display_1.Location = new System.Drawing.Point(75, 82);
+            this.txt_display_1.Name = "txt_display_1";
+            this.txt_display_1.Size = new System.Drawing.Size(272, 20);
+            this.txt_display_1.TabIndex = 42;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(41, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(334, 122);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 50;
+            this.pictureBox1.TabStop = false;
+            // 
             // btn_fechar
             // 
             this.btn_fechar.Location = new System.Drawing.Point(316, 429);
@@ -336,45 +401,6 @@
             this.label1.TabIndex = 48;
             this.label1.Text = "Controle dos servo motores:";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 34);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 13);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "Temperatura:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // btnBuzzer
-            // 
-            this.btnBuzzer.Location = new System.Drawing.Point(726, 28);
-            this.btnBuzzer.Name = "btnBuzzer";
-            this.btnBuzzer.Size = new System.Drawing.Size(64, 44);
-            this.btnBuzzer.TabIndex = 13;
-            this.btnBuzzer.Text = "Alarme [buzzer]";
-            this.btnBuzzer.UseVisualStyleBackColor = true;
-            this.btnBuzzer.Click += new System.EventHandler(this.btnBuzzer_Click);
-            // 
-            // lblStatusBuzzer
-            // 
-            this.lblStatusBuzzer.AutoSize = true;
-            this.lblStatusBuzzer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusBuzzer.ForeColor = System.Drawing.Color.Red;
-            this.lblStatusBuzzer.Location = new System.Drawing.Point(796, 37);
-            this.lblStatusBuzzer.Name = "lblStatusBuzzer";
-            this.lblStatusBuzzer.Size = new System.Drawing.Size(49, 24);
-            this.lblStatusBuzzer.TabIndex = 14;
-            this.lblStatusBuzzer.Text = "OFF";
-            // 
-            // lbl_temperatura
-            // 
-            this.lbl_temperatura.Location = new System.Drawing.Point(97, 31);
-            this.lbl_temperatura.Name = "lbl_temperatura";
-            this.lbl_temperatura.ReadOnly = true;
-            this.lbl_temperatura.Size = new System.Drawing.Size(67, 20);
-            this.lbl_temperatura.TabIndex = 36;
-            // 
             // btnM4menos
             // 
             this.btnM4menos.Location = new System.Drawing.Point(156, 492);
@@ -384,17 +410,6 @@
             this.btnM4menos.Text = "-";
             this.btnM4menos.UseVisualStyleBackColor = true;
             this.btnM4menos.Click += new System.EventHandler(this.btnM4menos_Click);
-            // 
-            // lblStatusConexao
-            // 
-            this.lblStatusConexao.AutoSize = true;
-            this.lblStatusConexao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusConexao.ForeColor = System.Drawing.Color.Red;
-            this.lblStatusConexao.Location = new System.Drawing.Point(635, 36);
-            this.lblStatusConexao.Name = "lblStatusConexao";
-            this.lblStatusConexao.Size = new System.Drawing.Size(49, 24);
-            this.lblStatusConexao.TabIndex = 12;
-            this.lblStatusConexao.Text = "OFF";
             // 
             // btnM4mais
             // 
@@ -575,6 +590,38 @@
             this.lblM1.TabIndex = 10;
             this.lblM1.Text = "90";
             // 
+            // btnBuzzer
+            // 
+            this.btnBuzzer.Location = new System.Drawing.Point(726, 28);
+            this.btnBuzzer.Name = "btnBuzzer";
+            this.btnBuzzer.Size = new System.Drawing.Size(64, 44);
+            this.btnBuzzer.TabIndex = 13;
+            this.btnBuzzer.Text = "Alarme [buzzer]";
+            this.btnBuzzer.UseVisualStyleBackColor = true;
+            this.btnBuzzer.Click += new System.EventHandler(this.btnBuzzer_Click);
+            // 
+            // lblStatusBuzzer
+            // 
+            this.lblStatusBuzzer.AutoSize = true;
+            this.lblStatusBuzzer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusBuzzer.ForeColor = System.Drawing.Color.Red;
+            this.lblStatusBuzzer.Location = new System.Drawing.Point(796, 37);
+            this.lblStatusBuzzer.Name = "lblStatusBuzzer";
+            this.lblStatusBuzzer.Size = new System.Drawing.Size(49, 24);
+            this.lblStatusBuzzer.TabIndex = 14;
+            this.lblStatusBuzzer.Text = "OFF";
+            // 
+            // lblStatusConexao
+            // 
+            this.lblStatusConexao.AutoSize = true;
+            this.lblStatusConexao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusConexao.ForeColor = System.Drawing.Color.Red;
+            this.lblStatusConexao.Location = new System.Drawing.Point(635, 36);
+            this.lblStatusConexao.Name = "lblStatusConexao";
+            this.lblStatusConexao.Size = new System.Drawing.Size(49, 24);
+            this.lblStatusConexao.TabIndex = 12;
+            this.lblStatusConexao.Text = "OFF";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -633,34 +680,6 @@
             this.timerStatusConexao.Interval = 3000;
             this.timerStatusConexao.Tick += new System.EventHandler(this.timerStatusConexao_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(41, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 122);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 50;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txt_display_1
-            // 
-            this.txt_display_1.BackColor = System.Drawing.Color.White;
-            this.txt_display_1.Location = new System.Drawing.Point(75, 82);
-            this.txt_display_1.Name = "txt_display_1";
-            this.txt_display_1.Size = new System.Drawing.Size(272, 20);
-            this.txt_display_1.TabIndex = 42;
-            // 
-            // btn_display
-            // 
-            this.btn_display.Location = new System.Drawing.Point(41, 159);
-            this.btn_display.Name = "btn_display";
-            this.btn_display.Size = new System.Drawing.Size(119, 32);
-            this.btn_display.TabIndex = 52;
-            this.btn_display.Text = "Alterar texto display";
-            this.btn_display.UseVisualStyleBackColor = true;
-            this.btn_display.Click += new System.EventHandler(this.btn_display_Click);
-            // 
             // lbl_laser
             // 
             this.lbl_laser.AutoSize = true;
@@ -681,25 +700,6 @@
             this.button1.Text = "Laser";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(166, 159);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 32);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "Limpar display";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txt_intervalo_angulo
-            // 
-            this.txt_intervalo_angulo.Location = new System.Drawing.Point(161, 223);
-            this.txt_intervalo_angulo.Name = "txt_intervalo_angulo";
-            this.txt_intervalo_angulo.Size = new System.Drawing.Size(48, 20);
-            this.txt_intervalo_angulo.TabIndex = 54;
-            this.txt_intervalo_angulo.Text = "5";
-            this.txt_intervalo_angulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
