@@ -28,7 +28,7 @@ A proposta foi a construção de um "Rover" controlado remotamente utilizando um
   
 ![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/arquitetura_comunicacao.PNG)
  
-                   Figura 1: Arquitetura do sistema de hardware do VANT.
+c
  
   De acordo com a Figura 1 temos a arquitetura geral do projeto, os itens enumerados cor-
 respondem a cada dispositivo encarregado de uma tarefa especíﬁca:
@@ -135,4 +135,75 @@ Os elementos em destaque na Figura 2 são partes que devem ser explicadas (algum
 
    
    3.2 Porta Serial
+   
+  O painel de controle possui um funcionamento básico: ele conecta através de uma porta
+serial ao emissor para enviar e receber um pacote de dados, no caso da porta serial manipulamos
+as operações por um componente mostrado na Figura 3 abaixo.
+![alt tag](C:\Users\Ivan\Desktop\Microcontrolador e Aplicações\trunk\imagens
 
+  A conexão é feita por um botão e uma caixa de texto que lista todas as portas disponíveis (no caso o dispositivo conectado a entrada USB), o timer timerCOM é responsável por atualizar essa lista de portas através de uma rotina (código 2). Com o dispositivo conectado  a porta deve ser listada como disponível e basta clicar no botão conectar. A conexão é explicada pelo código 3. Ao conectar podemos transferir e receber dados da entrada serial (da mesma maneira que é possível utilizando o serial da própria Arduino IDE).
+  == INSERIR CODIGO ==
+  
+      3.3 Lista de comandos
+  
+   A única função "diferente"foi apresentada anteriormente (a conexão USB), todas as demais ações são baseadas no envio e recebimento de pacotes (contendo comandos e dados). Havia a necessidade de se transmitir comandos que eram acompanhados de determinados valores, outras vezes comandos apenas (sem um dado associado) e em alguns casos comandos para requisitar alguma informação. Dessa forma o mecanismo desenvolvido para a comunicação acabou composto por dois bytes: um byte para o comando (cmd) e outro byte para o dado (valor). Os dois bytes são enviados juntos (como em uma variável do tipo int de 8bits: 11110000, os 4 primeiros bits são correspondente ao comando e os 4 bits mais a direita correspondente ao dado).
+  É um método bem simples de transferir um pacote de dados entre dispositivos mas em um futuro uma melhoria como criptografia seria ideal para proteção dos dados transmitidos. 
+  Também foi adotado um intervalo de valores para os quais os comandos seriam do tipo "simples"ou "composto"; Comandos simples são uma via de mão única: eles são transferidos via USB para o emissor e então enviados ao ROVER, já comandos compostos precisam de um retorno. Esse tratamento se fez necessário devido ao funcionamento do componente de rádio frequência que, apesar de operar como transmissor e receptor, precisa que o modo de operação seja alterado manualmente, então quando um comando composto é acionado o "anteriormente"emissor
+passa a operar como receptor até receber a informação do ROVER. O intervalo define que comandos entre 0000 até 0124 são tratados como simples, a partir do 0125 até 9999 são comandos compostos.
+
+     3.4 LEDs de controle
+ 
+ Antes de prosseguir para a análise dos demais controladores temos a abordagem sobre os LEDs utilizados para controle, no caso eles funcionam como um feedback visual para alguma mudança de estado ou execução de algum trecho chave do código. Esses sinais são muito
+importantes pois é possível concluir que algo deu errado mais rapidamente, diferentemente de uma aplicação 100. Dessa maneira os LEDs foram equipados como mecanismos de confirmação para o sistema.
+
+    3.5 Emissor Primário
+  
+  O emissor primário recebe os bytes da mensagem via serial e encaminha para o receptor no ROVER. A estrutura interna é mostrada na Figura 4, é composto por um conjunto de três LEDs e um componente de rádio frequência (modelo NRF24L01+). 
+  O esquemático das ligações é mostrado na Figura 5. A rotina do emissor é receber a mensagem e armazenar em um inteiro (de 2 bytes) e em seguida enviar para o ROVER.
+  Existe uma referência ao arquivo pacote.h, um código foi criado para abstrair a composição da mensagem que é enviada/recebida (os 2 bytes de mensagem), como sempre é nesse formato para todos os dispositivos usar um include evita a repetição de código.
+
+![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/Emissorprimario.PNG)
+
+                   Figura 4: Detalhes da estrutura do emissor primário.
+
+![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/emissor_primario.png)
+
+                   Figura 5: Ligação dos pinos no emissor primário.
+
+
+  
+3.6 Receptor Primário
+    
+O receptor primário tem como prioridade receber os dados pelo sensor de rádio frequência e então repassar o comando para o controlador dos motores (no caso o Arduino MEGA, chamado de receptor secundário), executar uma ação por ele mesmo e/ou enviar uma mensagem de volta
+para o emissor primário (o arduino ligado na USB do PC).
+
+Ele é equipado com um LED indicador, um buzzer (para emitir um aviso sonoro), um sensor de rádio frequência. Utilizamos a conexão IC2 para comunicação entre os dois arduinos e adicionalmente foi utilizado uma porta analógica para leitura da voltagem da bateria de lipo
+(que alimenta os motores).
+  
+  A placa construída pode ser vista na Figura 6, a visão logo abaixo não é espelhada, segue a mesma sequência de pinos (já foi invertida), na Figura 7 temos o esquema de ligações realizado na placa.
+  
+  O mecanismo de comunicação entre os dois Arduinos é chamado de IC2 (Inter-Integrated Circuit) e funciona com uma hierarquia mestre escravo, o receptor primário é o mestre e o receptor secundário o escravo, quando um comando precisa ser enviado ao Arduino Mega o Arduino Uno inicia a transferência que gera uma interrupção de execução no destinatário (para que essa recepção seja tratada no mesmo instante). Isso permite que múltiplos dispositivos se comuniquem por fio (inclusive o módulo do acelerômetro é operado por esse mesmo mecanismo, então a estrutura completa pode ser vista na Figura 8. Cada módulo é acessado por um endereço local pré-definido (no código de cada um), o acelerômetro já possui um endereçamento fixo (há a opção para mudar para outro valor acionando uma entrada do sensor, permitindo o uso de dois módulos simultaneamentes).
+  
+  O código tem uma chave de execução: trabalhar com uma variável globalizada (pacote dados) que é utilizada para receber os dados, para enviar os valores para o receptor secundário e também para enviar de volta ao emissor, caso necessário (por isso nas chamadas da função
+enviaIC2 não há parâmetros, ela simplesmente considera que o que estiver nessa variável é o que deve ser enviado).
+
+![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/receptor_primario.PNG)
+                      
+                      Figura 6: Detalhe da construção do receptor primário.
+                      
+![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/receptor_primario.PNG)
+         
+                     Figura 7: Esquema de ligação na placa do receptor primário.
+                     
+![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/estrutura%20de%20comunicacao.PNG)
+         
+                     Figura 8: Estrutura de comunicação local entre os dispositivos.
+                     
+   3.7 Receptor secundário
+   
+O receptor secundário executa rotinas de controle automatizado dos motores e recebe comandos pela comunicação IC2. Quando uma mensagem é recebida ocorre uma interrupção e essa chamada é atendida, depois retorna a execução do loop. 
+
+O controle consiste em avaliar o erro, no caso o desvio identificado em cada eixo e com isso gerar uma saída que define uma ação corretiva, no caso essa ação consiste em aumentar ou diminuir a velocidade de um ou mais motores. O controle é feito por eixos, no caso temos um controle para o eixo y e outro para o eixo x, a partir da leitura definimos o erro (diferença entre o valor lido e o valor de base-estado considerado ideal-), que é o valor proporcional; Salvamos a leitura do estado anterior e comparamos com a leitura atual, esse é o valor derivativo; Por fim mantemos um somatório dos valores lidos para gerar o valor de integração. A interação desses três fatores resulta no PIDy e PIDx, é feito uso de algumas constantes (K) para "pesar"cada uma dessas variáveis na conta final.
+
+
+                     
