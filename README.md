@@ -19,8 +19,7 @@ O "rover" terá sensores de leitura ambiente (luminosidade, ultrasom, etc), os d
 Adicionalmente espera-se equipar o veículo com uma camera capaz de enviar fotos remotamente.
 
 
-
-1. INTRODUÇÃO
+      1. INTRODUÇÃO
 
 
 A proposta foi a construção de um "Rover" controlado remotamente utilizando um microcontrolador de baixo custo com foco na aplicação em sistemas de detecção de dados. A execução envolveu uma série de conhecimentos multidisciplinares (entre disciplinas de computação, física e engenharia).
@@ -28,7 +27,6 @@ A proposta foi a construção de um "Rover" controlado remotamente utilizando um
   
 ![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/arquitetura_comunicacao.PNG)
  
-c
  
   De acordo com a Figura 1 temos a arquitetura geral do projeto, os itens enumerados cor-
 respondem a cada dispositivo encarregado de uma tarefa especíﬁca:
@@ -46,12 +44,9 @@ para o receptor secundário.
 (4) Receptor secundário: Um "Arduino Mega"que é utilizado para controle dos motores e dos sensores, pode receber comandos via IC2 do receptor primário para alteração da
 aceleração dos motores e posição dos braços mecânicos.
 
-
-----------Inserir foto dos motores e dos arduínos ???---------------
-
   A programação nas placas é a mesma (utilizando a linguagem C) e não há diferenças significativas de hardware (considerando o propósito de uso nesse projeto, no geral o MEGA é superior), foram testadas duas alternativas antes de definir esse modelo final: a primeira era utilizar um chip Attiny85 para função de comunicação (o chip daria um processamento dedicado a recepção de dados), como o chip é pequeno seria possível economizar espaço e peso, mas houve incompatibilidade com o sensor de rádio frequência em conjunto com a comunicação IC2 (futuramente será reavaliado essa solução); a segunda tentativa foi utilizar um "Arduino Due", principalmente pela característica de processamento paralelo, na prática teriam várias rotinas executando simultaneamente para garantir as tarefas de tempo real, mas novamente houve incompatibilidade com algumas bibliotecas, o que impossibilitou o uso.
 
-  1.2 Software e configuração do ambiente
+    1.1 Software e configuração do ambiente
 Foram utilizados dois softwares principais para o desenvolvimento do projeto:
 - Visual Studio 2015
 A IDE do VS2015 foi utilizada para o desenvolvimento da interface de comando (em C) representada na Figura 2, que executa no ambiente windows, para estudantes da UFSCar pode ser obtido através do Dreamspark:http://www.dc.ufscar.br/dreamspark.
@@ -61,7 +56,7 @@ A Arduino IDE foi utilizada para o desenvolvimento dos algoritmos que executam n
 Ambos softwares foram executados e um ambiente Windows (Windows 7 versão de 64 bits).
 
 
-  1.3 Componentes e periféricos
+    1.2 Componentes e periféricos
 
 A lista dos componentes utilizados pode ser vista a seguir:
 
@@ -81,7 +76,7 @@ A lista dos componentes utilizados pode ser vista a seguir:
 14. Componentes gerais: Resistores, LED’s, estanho, placa pcb,tubos termoretráteis, pinos e conectores, fios e chaves.
 
 
-2. Metodologia
+      2. Metodologia
 
 
 A metodologia aplicada partiu da análise individual para, posteriormente, avaliar uma interação em conjunto, isto é, primeiro foram avaliados os sensores e componentes individualmente e, uma vez que o funcionamento estivesse dominado, o mesmo foi integrado ao conjunto operacional.
@@ -95,10 +90,10 @@ Os dois Arduinos que são acoplados no VANT se comunicam por uma interface IC2 e
 
 
 
-3. Resultados e Discussão
+      3. Resultados e Discussão
 
  
- 3.1 Painel de controle
+    3.1 Painel de controle
 
 
 O painel de controle é o caminho pelo qual executamos o input dos dados, em projetos convencionais é normalmente utilizado um rádio controle mas nesse projeto foi adotado um sistema diferente: um software mapeia comandos que são enviados para um dispositivo e este envia novamente por uma conexão sem fio os dados para o receptor (que está no Rover).
@@ -134,7 +129,7 @@ Os elementos em destaque na Figura 2 são partes que devem ser explicadas (algum
 
 
    
-   3.2 Porta Serial
+    3.2 Porta Serial
    
   O painel de controle possui um funcionamento básico: ele conecta através de uma porta
 serial ao emissor para enviar e receber um pacote de dados, no caso da porta serial manipulamos
@@ -142,16 +137,16 @@ as operações por um componente mostrado na Figura 3 abaixo.
 ![alt tag](C:\Users\Ivan\Desktop\Microcontrolador e Aplicações\trunk\imagens
 
   A conexão é feita por um botão e uma caixa de texto que lista todas as portas disponíveis (no caso o dispositivo conectado a entrada USB), o timer timerCOM é responsável por atualizar essa lista de portas através de uma rotina (código 2). Com o dispositivo conectado  a porta deve ser listada como disponível e basta clicar no botão conectar. A conexão é explicada pelo código 3. Ao conectar podemos transferir e receber dados da entrada serial (da mesma maneira que é possível utilizando o serial da própria Arduino IDE).
-  == INSERIR CODIGO ==
+
   
-      3.3 Lista de comandos
+    3.3 Lista de comandos
   
    A única função "diferente"foi apresentada anteriormente (a conexão USB), todas as demais ações são baseadas no envio e recebimento de pacotes (contendo comandos e dados). Havia a necessidade de se transmitir comandos que eram acompanhados de determinados valores, outras vezes comandos apenas (sem um dado associado) e em alguns casos comandos para requisitar alguma informação. Dessa forma o mecanismo desenvolvido para a comunicação acabou composto por dois bytes: um byte para o comando (cmd) e outro byte para o dado (valor). Os dois bytes são enviados juntos (como em uma variável do tipo int de 8bits: 11110000, os 4 primeiros bits são correspondente ao comando e os 4 bits mais a direita correspondente ao dado).
   É um método bem simples de transferir um pacote de dados entre dispositivos mas em um futuro uma melhoria como criptografia seria ideal para proteção dos dados transmitidos. 
   Também foi adotado um intervalo de valores para os quais os comandos seriam do tipo "simples"ou "composto"; Comandos simples são uma via de mão única: eles são transferidos via USB para o emissor e então enviados ao ROVER, já comandos compostos precisam de um retorno. Esse tratamento se fez necessário devido ao funcionamento do componente de rádio frequência que, apesar de operar como transmissor e receptor, precisa que o modo de operação seja alterado manualmente, então quando um comando composto é acionado o "anteriormente"emissor
 passa a operar como receptor até receber a informação do ROVER. O intervalo define que comandos entre 0000 até 0124 são tratados como simples, a partir do 0125 até 9999 são comandos compostos.
 
-     3.4 LEDs de controle
+    3.4 LEDs de controle
  
  Antes de prosseguir para a análise dos demais controladores temos a abordagem sobre os LEDs utilizados para controle, no caso eles funcionam como um feedback visual para alguma mudança de estado ou execução de algum trecho chave do código. Esses sinais são muito
 importantes pois é possível concluir que algo deu errado mais rapidamente, diferentemente de uma aplicação 100. Dessa maneira os LEDs foram equipados como mecanismos de confirmação para o sistema.
@@ -172,7 +167,7 @@ importantes pois é possível concluir que algo deu errado mais rapidamente, dif
 
 
   
-3.6 Receptor Primário
+    3.6 Receptor Primário
     
 O receptor primário tem como prioridade receber os dados pelo sensor de rádio frequência e então repassar o comando para o controlador dos motores (no caso o Arduino MEGA, chamado de receptor secundário), executar uma ação por ele mesmo e/ou enviar uma mensagem de volta
 para o emissor primário (o arduino ligado na USB do PC).
@@ -199,11 +194,77 @@ enviaIC2 não há parâmetros, ela simplesmente considera que o que estiver ness
          
                      Figura 8: Estrutura de comunicação local entre os dispositivos.
                      
-   3.7 Receptor secundário
+    3.7 Receptor secundário
    
 O receptor secundário executa rotinas de controle automatizado dos motores e recebe comandos pela comunicação IC2. Quando uma mensagem é recebida ocorre uma interrupção e essa chamada é atendida, depois retorna a execução do loop. 
 
-O controle consiste em avaliar o erro, no caso o desvio identificado em cada eixo e com isso gerar uma saída que define uma ação corretiva, no caso essa ação consiste em aumentar ou diminuir a velocidade de um ou mais motores. O controle é feito por eixos, no caso temos um controle para o eixo y e outro para o eixo x, a partir da leitura definimos o erro (diferença entre o valor lido e o valor de base-estado considerado ideal-), que é o valor proporcional; Salvamos a leitura do estado anterior e comparamos com a leitura atual, esse é o valor derivativo; Por fim mantemos um somatório dos valores lidos para gerar o valor de integração. A interação desses três fatores resulta no PIDy e PIDx, é feito uso de algumas constantes (K) para "pesar"cada uma dessas variáveis na conta final.
+Abaixo na Figura 9 na temos as ligações feitas na placa, note que ele é ligado no arduíno uno o sensor de temperatura, laser, display LCD, e os motores estão todos ligados no receptor primário como mostra abaixo.
 
+![alt tag](https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/schematics/receptor_secundario2.png)
+         
+                     Figura 9: Esquema de ligações no receptor secundário.
+     
 
+    3.8 Alimentação do Circuito
+     
+O circuito é alimentado por uma bateria de 9v, não foi utilizado o pino Vin mas sim a entrada jack nos dois arduinos. Foi colocado uma chave de On/Off  para controle. Alternativamente o circuito oferece suporte a uma alimentação por fonte (no projeto: uma fonte comum de carregador com um regulador de tensão Lm2596s para 9v) que é utilizada para testes e depuração.
+
+A bateria de lipo oferece saídas que são ligadas a um alarme que mostra visualmente a carga de cada cédula e exibe um sinal sonoro quando atinge níveis críticos. Uma dessas saídas (a 1s de até 3.3v aproximadamente) é ligada a entrada analógica do receptor primário, a leitura analógica exibe no painel de controle um nível de porcentagem restante de bateria (essa conexão é controlada por uma chave.
+ 
+ 
+      4. Conclusão
+ 
+A construção do projeto do estudo e análise de diversas técnologias e práticas,foram diferentes softwares e hardwares, diferentes arquiteturas e modelos de prototipagem formando algo bem diversificado.
+
+O modelo de comunicação sem fio e transferência dos dados pode ser usado para as mais diversas aplicações, assim como a hierarquia do hardware pode ser expandida, montando uma verdadeira rede de micro controladores em paralelo.
+
+O desenvolvimento da estrutura física envolveu muitas considerações que puderam ser comprovadas posteriormente, com relação ao design na composição e peso dos materiais empregados onde, futuramente pode ser substituída por uma construção em plástico (modelado por uma impressora 3D).
+
+Os motores e a bateria corresponderam aos cálculos realizados e foram capazes de atender as necessidades básicas do Rover apesar de que a adição de outra bateria aumentaria consideravelmente o tempo total mesmo sem causar grandes alterações no peso final).
+
+A interface de controle garante um maior nível de personalização (poderia construir um banco de dados para coleta de dados específicos) mas também pode ter certas complementações como desenvolvimento de um controle analógico ou uso de um smartphone para um melhor
+controle.
+
+Os micro controladores certamente foram suficientes para o processamento dos dados, apesar de ter sido utilizados duas unidades no Rover ainda sim podem ser considerados como uma opção viável, outras possibilidades como uso do raspberry podem ser estudadas e avaliadas.
+
+O projeto como um todo foi um grande desafio, muitos testes e alterações até atingir o nível atual, a maior parte do esforço em desenvolver a arquitetura para interação entre todas os módulos garantindo que exista um processamento em tempo real, sem que algo tenha que ser propriamente sacrificado para isso. O Rover ainda será aprimorado com itens adicionais (um suporte para camera por exemplo, principalmente com um hardware para armazenamento de imagens). A ideia é incrementar o projeto mantendo do Rover representado na Figura 10 abaixo, a arquitetura desenvolvida inicialmente e aprimorar pontos que resultem em melhoras significativas.
+ 
+![alt tag] (https://github.com/CaioPegoraro/ProjetoFinalMic/blob/master/imagens/Rover%203.JPG)
+ 
+                     Figura 10: Projeto final.
                      
+      5. Referências
+
+[1] MARGOLIS, Michael. Arduino Cookbook .ed. O’Reilly Media, 2011.
+
+[2] McROBERTS, Michel, Arduino Básico, Ed. Novatec, 2011.
+
+[3] MONK, Simon. Programação com Arduino: Começando com Sketches, Ed. Bookan, 2012.
+
+[4] Arduino, <http://www.arduino.cc/>, acesso em acesso em acessado Janeiro de 2017.
+
+[5] “Veículos aéreos não tripulados prometem revolucionar mercado de geotecnologia”, Massa Cinzenta, <http://bit.ly/2c1ptEK>, acesso em acessado Janeiro de 2017.
+
+[6] VANTs e RPA, <http://bit.ly/2bvq4Sd>, acessado Janeiro de 2017.
+
+[7] Visual Studio, <https://www.visualstudio.com/>, acessado Janeiro de 2017.
+
+[8] Bluetooth, < http://bit.ly/1Pj9caw>, acessado Janeiro de 2017.
+
+[9] FPV, <http://fpvbrasil.com.br/page/o-que-e>, acessado Janeiro de 2017.
+
+[10] ANAC, <http://www.anac.gov.br/>, acessado Fevereiro de 2017..
+
+[11] WIRELESS, <http://bit.ly/2bT6XRs>, acessado Fevereiro de 2017..
+
+[12] “Quadcopter Design”,< http://bit.ly/2btvlIx>, acessado Fevereiro de 2017..
+
+[13] “RF24 Driver release”, Maniacal Bits, <http://bit.ly/2c7EfwH>, acessado Fevereiro de 2017..
+
+[14] “Giroscópio GY-521”, O mundo da programação, <http://bit.ly/2bvqUJT>, acessado Fevereiro de 2017..
+
+[15] “Controle PID em sistemas embarcados”, Embarcados, <http://bit.ly/2c1Dx0E>, acessado Fevereiro de 2017..
+
+[16] “Quadcopter PID Explained and Tuning”, OscarLiang, <http://bit.ly/1QJgfun>, acessado Fevereiro de 2017.
+
+[17] “Estabilizador de voo”, Drones personalizados, <http://bit.ly/2bKZ9hd>, acessado Fevereiro de 2017.
