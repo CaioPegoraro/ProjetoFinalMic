@@ -73,10 +73,10 @@ A lista dos componentes utilizados pode ser vista a seguir:
 11. Bateria: 9v (alimentação do circuito no VANT);
 12. Sensor de Temperatura: DS18B20;
 13. 4x:Rodinhas;
-14. Componentes gerais: Resistores, LED’s, estanho, placa pcb,tubos termoretráteis, pinos e conectores, fios e chaves.
+   
+Além de outros componentes como o braço mecãnico que componentes Componentes gerais: Resistores, LED’s, estanho, placa pcb,tubos termoretráteis, pinos e conectores, fios e chaves.
 
-
-      2. Metodologia
+      2. METODOLOGIA
 
 
 A metodologia aplicada partiu da análise individual para, posteriormente, avaliar uma interação em conjunto, isto é, primeiro foram avaliados os sensores e componentes individualmente e, uma vez que o funcionamento estivesse dominado, o mesmo foi integrado ao conjunto operacional.
@@ -90,7 +90,7 @@ Os dois Arduinos que são acoplados no VANT se comunicam por uma interface IC2 e
 
 
 
-      3. Resultados e Discussão
+      3. RESULTADOS E DISCUSSÃO
 
  
     3.1 Painel de controle
@@ -212,7 +212,7 @@ O circuito é alimentado por uma bateria de 9v, não foi utilizado o pino Vin ma
 A bateria de lipo oferece saídas que são ligadas a um alarme que mostra visualmente a carga de cada cédula e exibe um sinal sonoro quando atinge níveis críticos. Uma dessas saídas (a 1s de até 3.3v aproximadamente) é ligada a entrada analógica do receptor primário, a leitura analógica exibe no painel de controle um nível de porcentagem restante de bateria (essa conexão é controlada por uma chave.
  
  
-      4. Conclusão
+      4. CONCLUSÃO
  
 A construção do projeto do estudo e análise de diversas técnologias e práticas,foram diferentes softwares e hardwares, diferentes arquiteturas e modelos de prototipagem formando algo bem diversificado.
 
@@ -233,7 +233,7 @@ O projeto como um todo foi um grande desafio, muitos testes e alterações até 
  
                      Figura 10: Projeto final.
                      
-      5. Referências
+      5. REFERÊNCIAS BIBLIOGRÁFICAS
 
 [1] MARGOLIS, Michael. Arduino Cookbook .ed. O’Reilly Media, 2011.
 
